@@ -4,6 +4,9 @@
  */
 package metegolganam3a;
 
+import Conexion.ConexionMySql;
+import Vista.VistaJugadores;
+
 /**
  *
  * @author blink
@@ -14,7 +17,9 @@ public class MeteGolGanaM3A {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Conexion.ConexionMySql m = new ConexionMySql();
+        
     }
     
 }
