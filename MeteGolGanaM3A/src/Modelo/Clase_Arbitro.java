@@ -10,5 +10,5 @@ package Modelo;
  * @author Carlos
  */
 public class Clase_Arbitro {
-    
+    private int codigo;
 }
