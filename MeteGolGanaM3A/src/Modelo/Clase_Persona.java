@@ -32,6 +32,22 @@ public class Clase_Persona {
     public Clase_Persona() {
     }
 
+    public Clase_Persona(String cedula, String nombnre1, String nombnre2, String apellido1, String apellido2, Date fecha_nac, String telefono, String email, String sexo, String direccion, Image foto, FileInputStream imageFile, int length) {
+        this.cedula = cedula;
+        this.nombnre1 = nombnre1;
+        this.nombnre2 = nombnre2;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.fecha_nac = fecha_nac;
+        this.telefono = telefono;
+        this.email = email;
+        this.sexo = sexo;
+        this.direccion = direccion;
+        this.foto = foto;
+        this.imageFile = imageFile;
+        this.length = length;
+    }
+
     public String getCedula() {
         return cedula;
     }
