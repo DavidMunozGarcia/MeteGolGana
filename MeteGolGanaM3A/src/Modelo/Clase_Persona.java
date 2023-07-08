@@ -24,6 +24,7 @@ public class Clase_Persona {
     private String email;
     private String sexo;
     private String direccion;
+    private boolean estado_elim;
     private Image foto;
     //Guardar foto>
     private FileInputStream imageFile;
@@ -32,7 +33,7 @@ public class Clase_Persona {
     public Clase_Persona() {
     }
 
-    public Clase_Persona(String cedula, String nombnre1, String nombnre2, String apellido1, String apellido2, Date fecha_nac, String telefono, String email, String sexo, String direccion, Image foto, FileInputStream imageFile, int length) {
+    public Clase_Persona(String cedula, String nombnre1, String nombnre2, String apellido1, String apellido2, Date fecha_nac, String telefono, String email, String sexo, String direccion, boolean estado_elim, Image foto, FileInputStream imageFile, int length) {
         this.cedula = cedula;
         this.nombnre1 = nombnre1;
         this.nombnre2 = nombnre2;
@@ -43,6 +44,7 @@ public class Clase_Persona {
         this.email = email;
         this.sexo = sexo;
         this.direccion = direccion;
+        this.estado_elim = estado_elim;
         this.foto = foto;
         this.imageFile = imageFile;
         this.length = length;
@@ -151,6 +153,13 @@ public class Clase_Persona {
     public void setLength(int length) {
         this.length = length;
     }
-    
+
+    public boolean isEstado_elim() {
+        return estado_elim;
+    }
+
+    public void setEstado_elim(boolean estado_elim) {
+        this.estado_elim = estado_elim;
+    }
     
 }
