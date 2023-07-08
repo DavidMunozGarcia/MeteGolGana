@@ -67,7 +67,7 @@ public class Modelo_Persona extends Clase_Persona {
     }
 
     public boolean OcultarPersona() {
-        
+
         String sql = "UPDATE `persona` SET `estado_elim`='" + isEstado_elim() + "' WHERE `cedula`='" + getCedula() + "';";
 
         return con.CRUD(sql);
@@ -75,12 +75,13 @@ public class Modelo_Persona extends Clase_Persona {
 
     public List<Clase_Persona> ListaPersona() {
 
-        String sql = "SELECT * FROM `persona` ORDER BY 'cedula'";
-        ResultSet res = con.Consultas(sql);
-        List<Clase_Persona> per = new ArrayList<>();
-        byte[] bytea;
-
         try {
+            
+            String sql = "SELECT * FROM `persona` ORDER BY 'cedula'";
+            ResultSet res = con.Consultas(sql);
+            List<Clase_Persona> per = new ArrayList<>();
+            byte[] bytea;
+
             while (res.next()) {
                 Clase_Persona mipersona = new Clase_Jugador();
                 mipersona.setApellido1(res.getString("`apellido1`"));
@@ -96,13 +97,13 @@ public class Modelo_Persona extends Clase_Persona {
                 mipersona.setEstado_elim(res.getBoolean("`estado_elim`"));
 
                 bytea = res.getBytes("'foto'");
-                
+
                 if (bytea != null) try {
                     mipersona.setFoto(getImage(bytea));
                 } catch (IOException ex) {
                     Logger.getLogger(Modelo_Persona.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
                 per.add(mipersona);
             }
             res.close();
