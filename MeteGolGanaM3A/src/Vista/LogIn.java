@@ -50,29 +50,26 @@ public class LogIn extends javax.swing.JFrame {
         lblFoto = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         fSTexFieldMD1 = new LIB.FSTexFieldMD();
         fSPasswordFieldMD1 = new LIB.FSPasswordFieldMD();
-        fSButtonMD1 = new LIB.FSButtonMD();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        fSButtonMD1 = new LIB.FSButtonMD();
 
         dlgPersona.setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtCedulaDLG.setForeground(new java.awt.Color(0, 102, 255));
+        txtCedulaDLG.setForeground(new java.awt.Color(0, 0, 0));
         txtCedulaDLG.setToolTipText("Ingresa tu cédula");
         txtCedulaDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txtCedulaDLG.setPlaceholder("Cédula");
         jPanel3.add(txtCedulaDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
-        txtCorreoDlg.setForeground(new java.awt.Color(0, 102, 255));
+        txtCorreoDlg.setForeground(new java.awt.Color(0, 0, 0));
         txtCorreoDlg.setToolTipText("Ingresa tu cédula");
         txtCorreoDlg.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txtCorreoDlg.setPlaceholder("Correo Electrónico");
@@ -83,7 +80,7 @@ public class LogIn extends javax.swing.JFrame {
         });
         jPanel3.add(txtCorreoDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
 
-        txtDirecDLG.setForeground(new java.awt.Color(0, 102, 255));
+        txtDirecDLG.setForeground(new java.awt.Color(0, 0, 0));
         txtDirecDLG.setToolTipText("Ingresa tu cédula");
         txtDirecDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txtDirecDLG.setPlaceholder("Dirección");
@@ -94,19 +91,19 @@ public class LogIn extends javax.swing.JFrame {
         });
         jPanel3.add(txtDirecDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
 
-        txt1erNomDlg.setForeground(new java.awt.Color(0, 102, 255));
+        txt1erNomDlg.setForeground(new java.awt.Color(0, 0, 0));
         txt1erNomDlg.setToolTipText("Ingresa tu cédula");
         txt1erNomDlg.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txt1erNomDlg.setPlaceholder("Primer Nombre");
         jPanel3.add(txt1erNomDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
-        txt2doNomDLG.setForeground(new java.awt.Color(0, 102, 255));
+        txt2doNomDLG.setForeground(new java.awt.Color(0, 0, 0));
         txt2doNomDLG.setToolTipText("Ingresa tu cédula");
         txt2doNomDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txt2doNomDLG.setPlaceholder("Segundo Nombre");
         jPanel3.add(txt2doNomDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
-        txtTelfDLG.setForeground(new java.awt.Color(0, 102, 255));
+        txtTelfDLG.setForeground(new java.awt.Color(0, 0, 0));
         txtTelfDLG.setToolTipText("Ingresa tu cédula");
         txtTelfDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txtTelfDLG.setPlaceholder("Teléfono");
@@ -118,7 +115,7 @@ public class LogIn extends javax.swing.JFrame {
         jPanel3.add(txtTelfDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, -1, -1));
         jPanel3.add(txtFechaDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 250, 42));
 
-        txt1erApeDLG.setForeground(new java.awt.Color(0, 102, 255));
+        txt1erApeDLG.setForeground(new java.awt.Color(0, 0, 0));
         txt1erApeDLG.setToolTipText("Ingresa tu cédula");
         txt1erApeDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txt1erApeDLG.setPlaceholder("Primer Apellido");
@@ -129,7 +126,7 @@ public class LogIn extends javax.swing.JFrame {
         });
         jPanel3.add(txt1erApeDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
-        txt2doApeDLG.setForeground(new java.awt.Color(0, 102, 255));
+        txt2doApeDLG.setForeground(new java.awt.Color(0, 0, 0));
         txt2doApeDLG.setToolTipText("Ingresa tu cédula");
         txt2doApeDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txt2doApeDLG.setPlaceholder("Segundo Apellido");
@@ -177,6 +174,7 @@ public class LogIn extends javax.swing.JFrame {
         btnSiguienteDlgUsu.setToolTipText("Continua con tu registro");
         btnSiguienteDlgUsu.setColorHover(new java.awt.Color(0, 102, 204));
         btnSiguienteDlgUsu.setColorPressed(new java.awt.Color(0, 204, 51));
+        btnSiguienteDlgUsu.setColorTextHover(new java.awt.Color(255, 255, 255));
         btnSiguienteDlgUsu.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         btnSiguienteDlgUsu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,80 +239,51 @@ public class LogIn extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Mete Gol Gana");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic Medium", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Inicio de Sesión");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, -1, -1));
 
         fSTexFieldMD1.setForeground(new java.awt.Color(0, 102, 255));
         fSTexFieldMD1.setToolTipText("Ingresa tu cédula");
         fSTexFieldMD1.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         fSTexFieldMD1.setPlaceholder("Usuario");
-        jPanel2.add(fSTexFieldMD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, -1, -1));
+        getContentPane().add(fSTexFieldMD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, -1, -1));
 
         fSPasswordFieldMD1.setForeground(new java.awt.Color(51, 102, 255));
         fSPasswordFieldMD1.setToolTipText("Ingresa tu contraseña");
         fSPasswordFieldMD1.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         fSPasswordFieldMD1.setPlaceholder("Contraseña ");
-        jPanel2.add(fSPasswordFieldMD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
+        getContentPane().add(fSPasswordFieldMD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
+
+        jComboBox1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(0, 102, 255));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingresar Como:", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setToolTipText("Tipo de usuario");
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 250, 39));
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("¿Olvedaste tu contraseña?");
+        jLabel2.setToolTipText("Restablece tu contraseña");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, -1, -1));
 
         fSButtonMD1.setBackground(new java.awt.Color(255, 255, 255));
         fSButtonMD1.setForeground(new java.awt.Color(0, 102, 255));
         fSButtonMD1.setText("Ingresar");
         fSButtonMD1.setToolTipText("Inicia Sesión");
         fSButtonMD1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
-        fSButtonMD1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fSButtonMD1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(fSButtonMD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 250, -1));
-
-        jComboBox1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(0, 102, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingresar Como:", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setToolTipText("Tipo de usuario");
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 250, 39));
-
-        jLabel2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("¿Olvedaste tu contraseña?");
-        jLabel2.setToolTipText("Restablece tu contraseña");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, -1, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/cancha.png"))); // NOI18N
-        jLabel4.setToolTipText("Cerrar programa");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 610));
-
-        jLabel5.setFont(new java.awt.Font("Yu Gothic Medium", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Inicio de Sesión");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistash/iconos/iconosh/cancha.png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 610));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(fSButtonMD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 250, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void fSButtonMD1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fSButtonMD1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fSButtonMD1ActionPerformed
 
     private void txtTelfDLGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelfDLGActionPerformed
         // TODO add your handling code here:
@@ -381,38 +350,35 @@ public class LogIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private LIB.FSButtonMD btnRetrocederDlgRegistro;
-    private LIB.FSButtonMD btnSiguienteDlgUsu;
+    public static LIB.FSButtonMD btnRetrocederDlgRegistro;
+    public static LIB.FSButtonMD btnSiguienteDlgUsu;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JDialog dlgPersona;
+    public static javax.swing.JDialog dlgPersona;
     private LIB.FSButtonMD fSButtonMD1;
     private LIB.FSPasswordFieldMD fSPasswordFieldMD1;
     private LIB.FSTexFieldMD fSTexFieldMD1;
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    public static javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel lblFoto;
-    private javax.swing.JRadioButton rdbFemeninoDlg;
-    private javax.swing.JRadioButton rdbMasculinoDlg;
-    private javax.swing.JRadioButton rdbOtroDlg;
-    private LIB.FSTexFieldMD txt1erApeDLG;
-    private LIB.FSTexFieldMD txt1erNomDlg;
-    private LIB.FSTexFieldMD txt2doApeDLG;
-    private LIB.FSTexFieldMD txt2doNomDLG;
-    private LIB.FSTexFieldMD txtCedulaDLG;
-    private LIB.FSTexFieldMD txtCorreoDlg;
-    private LIB.FSTexFieldMD txtDirecDLG;
-    private com.toedter.calendar.JDateChooser txtFechaDlg;
-    private LIB.FSTexFieldMD txtTelfDLG;
+    public static javax.swing.JLabel lblFoto;
+    public static javax.swing.JRadioButton rdbFemeninoDlg;
+    public static javax.swing.JRadioButton rdbMasculinoDlg;
+    public static javax.swing.JRadioButton rdbOtroDlg;
+    public static LIB.FSTexFieldMD txt1erApeDLG;
+    public static LIB.FSTexFieldMD txt1erNomDlg;
+    public static LIB.FSTexFieldMD txt2doApeDLG;
+    public static LIB.FSTexFieldMD txt2doNomDLG;
+    public static LIB.FSTexFieldMD txtCedulaDLG;
+    public static LIB.FSTexFieldMD txtCorreoDlg;
+    public static LIB.FSTexFieldMD txtDirecDLG;
+    public static com.toedter.calendar.JDateChooser txtFechaDlg;
+    public static LIB.FSTexFieldMD txtTelfDLG;
     // End of variables declaration//GEN-END:variables
 }

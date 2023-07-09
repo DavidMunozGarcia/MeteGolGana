@@ -31,6 +31,7 @@ public class VistaJugadores extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         lblReMoJugadores = new javax.swing.JLabel();
         txtCodigo = new LIB.FSTexFieldMD();
+        txtCedula = new LIB.FSTexFieldMD();
         txtAñosExperiencia = new LIB.FSTexFieldMD();
         cbxPosicion = new javax.swing.JComboBox<>();
         txtEquipo = new LIB.FSTexFieldMD();
@@ -55,8 +56,8 @@ public class VistaJugadores extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblJugadores = new javax.swing.JTable();
-        btnAgregar1 = new javax.swing.JButton();
-        btnAgregar2 = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -93,35 +94,40 @@ public class VistaJugadores extends javax.swing.JFrame {
         txtCodigo.setForeground(new java.awt.Color(0, 0, 0));
         txtCodigo.setBordeColorFocus(new java.awt.Color(51, 51, 255));
         txtCodigo.setPlaceholder("Codigo");
-        jPanel3.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 84, 200, -1));
+        jPanel3.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 210, -1));
+
+        txtCedula.setForeground(new java.awt.Color(0, 0, 0));
+        txtCedula.setBordeColorFocus(new java.awt.Color(51, 51, 255));
+        txtCedula.setPlaceholder("Cedula");
+        jPanel3.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 210, -1));
 
         txtAñosExperiencia.setForeground(new java.awt.Color(0, 0, 0));
         txtAñosExperiencia.setBordeColorFocus(new java.awt.Color(51, 51, 255));
         txtAñosExperiencia.setPlaceholder("Años de experiencia");
-        jPanel3.add(txtAñosExperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 200, -1));
+        jPanel3.add(txtAñosExperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 210, -1));
 
-        cbxPosicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Posicion" }));
-        jPanel3.add(cbxPosicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 200, 32));
+        cbxPosicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Posicion", "Portero", "Defensa Central", "Defensa Lateral", "Centro Campista Defensivo", "Centro Campista Ofensivo", "Delantero Lateral", "Centrodelantero" }));
+        jPanel3.add(cbxPosicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 200, 32));
 
         txtEquipo.setForeground(new java.awt.Color(0, 0, 0));
         txtEquipo.setBordeColorFocus(new java.awt.Color(51, 51, 255));
         txtEquipo.setPlaceholder("Equippo");
-        jPanel3.add(txtEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 210, -1));
-        jPanel3.add(dateFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 200, 35));
+        jPanel3.add(txtEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 210, -1));
+        jPanel3.add(dateFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, 200, 35));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic Medium", 0, 14)); // NOI18N
         jLabel3.setText("Foto");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic Medium", 0, 14)); // NOI18N
         jLabel4.setText("Fecha fin de contrato");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 157, -1));
-        jPanel3.add(dateFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, 200, 35));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, 157, -1));
+        jPanel3.add(dateFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, 200, 35));
 
         txtSueldo.setForeground(new java.awt.Color(0, 0, 0));
         txtSueldo.setBordeColorFocus(new java.awt.Color(51, 51, 255));
         txtSueldo.setPlaceholder("Sueldo");
-        jPanel3.add(txtSueldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 195, -1));
+        jPanel3.add(txtSueldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 210, -1));
 
         tblEquipo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -144,23 +150,23 @@ public class VistaJugadores extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblEquipo);
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 430, 260));
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 430, 260));
 
         btnCancelar.setText("Cancelar");
         btnCancelar.setColorHover(new java.awt.Color(0, 0, 0));
         btnCancelar.setColorNormal(new java.awt.Color(255, 0, 0));
         btnCancelar.setColorTextHover(new java.awt.Color(255, 255, 255));
-        jPanel3.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, -1, -1));
+        jPanel3.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 570, -1, -1));
 
         btnRegistrarModificar.setText("Registrar");
         btnRegistrarModificar.setColorHover(new java.awt.Color(0, 102, 204));
         btnRegistrarModificar.setColorPressed(new java.awt.Color(0, 204, 51));
         btnRegistrarModificar.setColorTextHover(new java.awt.Color(255, 255, 255));
-        jPanel3.add(btnRegistrarModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 570, -1, -1));
+        jPanel3.add(btnRegistrarModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic Medium", 0, 14)); // NOI18N
         jLabel5.setText("Fecha Inicio de contrato");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, -1, -1));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, -1, -1));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -175,12 +181,12 @@ public class VistaJugadores extends javax.swing.JFrame {
             .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 140, 130));
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 140, 130));
 
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Agregar foto");
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 140, -1));
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 140, -1));
 
         javax.swing.GroupLayout dialogRegistrarModificarLayout = new javax.swing.GroupLayout(dialogRegistrarModificar.getContentPane());
         dialogRegistrarModificar.getContentPane().setLayout(dialogRegistrarModificarLayout);
@@ -240,32 +246,41 @@ public class VistaJugadores extends javax.swing.JFrame {
         btnAgregar.setText("Crear nuevo");
         btnAgregar.setToolTipText("Registrar un nuevo jugador");
 
+        tblJugadores.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
         tblJugadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Codigo", "Cedula", "Nombre", "Apellido", "Equipo", "Posicion", "Sueldo"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tblJugadores);
 
-        btnAgregar1.setBackground(new java.awt.Color(0, 102, 204));
-        btnAgregar1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
-        btnAgregar1.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/modificar.png"))); // NOI18N
-        btnAgregar1.setText("Modificar");
-        btnAgregar1.setToolTipText("Registrar un nuevo jugador");
+        btnModificar.setBackground(new java.awt.Color(0, 102, 204));
+        btnModificar.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/modificar.png"))); // NOI18N
+        btnModificar.setText("Modificar");
+        btnModificar.setToolTipText("Registrar un nuevo jugador");
 
-        btnAgregar2.setBackground(new java.awt.Color(0, 0, 0));
-        btnAgregar2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
-        btnAgregar2.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/contenedor-de-basura.png"))); // NOI18N
-        btnAgregar2.setText("Eliminar");
-        btnAgregar2.setToolTipText("Registrar un nuevo jugador");
+        btnEliminar.setBackground(new java.awt.Color(0, 0, 0));
+        btnEliminar.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/contenedor-de-basura.png"))); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setToolTipText("Registrar un nuevo jugador");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -281,11 +296,11 @@ public class VistaJugadores extends javax.swing.JFrame {
                         .addComponent(btnAgregar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 892, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAgregar1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnAgregar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnModificar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -300,9 +315,9 @@ public class VistaJugadores extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnAgregar1)
+                        .addComponent(btnModificar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAgregar2)
+                        .addComponent(btnEliminar)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -366,10 +381,10 @@ public class VistaJugadores extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnAgregar;
-    public static javax.swing.JButton btnAgregar1;
-    public static javax.swing.JButton btnAgregar2;
     public static LIB.FSButtonMD btnCancelar;
+    public static javax.swing.JButton btnEliminar;
     public static LIB.FSButtonMD btnInicio;
+    public static javax.swing.JButton btnModificar;
     public static LIB.FSButtonMD btnRegistrarModificar;
     public static javax.swing.JComboBox<String> cbxPosicion;
     public static com.toedter.calendar.JDateChooser dateFechaFin;
@@ -390,12 +405,13 @@ public class VistaJugadores extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblFoto;
+    public static javax.swing.JLabel lblFoto;
     private javax.swing.JLabel lblReMoJugadores;
     public static javax.swing.JTable tblEquipo;
     public static javax.swing.JTable tblJugadores;
     public static LIB.FSTexFieldMD txtAñosExperiencia;
     public static LIB.FSTexFieldMD txtBuscar;
+    public static LIB.FSTexFieldMD txtCedula;
     public static LIB.FSTexFieldMD txtCodigo;
     public static LIB.FSTexFieldMD txtEquipo;
     public static LIB.FSTexFieldMD txtSueldo;
