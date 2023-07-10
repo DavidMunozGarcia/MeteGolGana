@@ -48,8 +48,8 @@ public class LogIn extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         lblFoto = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        btnFoto = new javax.swing.JButton();
+        btnGrupo1 = new javax.swing.ButtonGroup();
         fSGradientPanel1 = new LIB.FSGradientPanel();
         fSTexFieldMD1 = new LIB.FSTexFieldMD();
         fSPasswordFieldMD1 = new LIB.FSPasswordFieldMD();
@@ -140,19 +140,19 @@ public class LogIn extends javax.swing.JFrame {
         });
         jPanel3.add(txt2doApeDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
 
-        buttonGroup1.add(rdbMasculinoDlg);
+        btnGrupo1.add(rdbMasculinoDlg);
         rdbMasculinoDlg.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
         rdbMasculinoDlg.setForeground(new java.awt.Color(0, 51, 204));
         rdbMasculinoDlg.setText("Masculino");
         jPanel3.add(rdbMasculinoDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, 42));
 
-        buttonGroup1.add(rdbFemeninoDlg);
+        btnGrupo1.add(rdbFemeninoDlg);
         rdbFemeninoDlg.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
         rdbFemeninoDlg.setForeground(new java.awt.Color(0, 51, 204));
         rdbFemeninoDlg.setText("Femenino");
         jPanel3.add(rdbFemeninoDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, -1, 42));
 
-        buttonGroup1.add(rdbOtroDlg);
+        btnGrupo1.add(rdbOtroDlg);
         rdbOtroDlg.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
         rdbOtroDlg.setForeground(new java.awt.Color(0, 51, 204));
         rdbOtroDlg.setText("Otro");
@@ -225,10 +225,10 @@ public class LogIn extends javax.swing.JFrame {
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 140, 130));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 204));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Agregar foto");
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 140, -1));
+        btnFoto.setBackground(new java.awt.Color(0, 153, 204));
+        btnFoto.setForeground(new java.awt.Color(255, 255, 255));
+        btnFoto.setText("Agregar foto");
+        jPanel3.add(btnFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 140, -1));
 
         javax.swing.GroupLayout dlgPersonaLayout = new javax.swing.GroupLayout(dlgPersona.getContentPane());
         dlgPersona.getContentPane().setLayout(dlgPersonaLayout);
@@ -410,16 +410,16 @@ public class LogIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JButton btnFoto;
+    public static javax.swing.ButtonGroup btnGrupo1;
     public static LIB.FSButtonMD btnRetrocederDlgRegistro;
     public static LIB.FSButtonMD btnSiguienteDlgUsu;
-    private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JDialog dlgPersona;
     private LIB.FSButtonMD fSButtonMD1;
     private LIB.FSButtonMD fSButtonMD2;
     private LIB.FSGradientPanel fSGradientPanel1;
     private LIB.FSPasswordFieldMD fSPasswordFieldMD1;
     private LIB.FSTexFieldMD fSTexFieldMD1;
-    public static javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
