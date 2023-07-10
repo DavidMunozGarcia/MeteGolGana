@@ -50,13 +50,16 @@ public class LogIn extends javax.swing.JFrame {
         lblFoto = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        fSGradientPanel1 = new LIB.FSGradientPanel();
         fSTexFieldMD1 = new LIB.FSTexFieldMD();
         fSPasswordFieldMD1 = new LIB.FSPasswordFieldMD();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
         fSButtonMD1 = new LIB.FSButtonMD();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        fSButtonMD2 = new LIB.FSButtonMD();
+        jLabel3 = new javax.swing.JLabel();
 
         dlgPersona.setResizable(false);
 
@@ -241,46 +244,103 @@ public class LogIn extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Mete Gol Gana");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, -1));
+        fSGradientPanel1.setFSEndColor(new java.awt.Color(255, 255, 204));
+        fSGradientPanel1.setFSGradientFocus(700);
+        fSGradientPanel1.setFSStartColor(new java.awt.Color(255, 204, 204));
 
-        jLabel5.setFont(new java.awt.Font("Yu Gothic Medium", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Inicio de Sesión");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, -1, -1));
-
-        fSTexFieldMD1.setForeground(new java.awt.Color(0, 102, 255));
+        fSTexFieldMD1.setBackground(new java.awt.Color(255, 204, 153));
+        fSTexFieldMD1.setForeground(new java.awt.Color(0, 0, 0));
         fSTexFieldMD1.setToolTipText("Ingresa tu cédula");
         fSTexFieldMD1.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         fSTexFieldMD1.setPlaceholder("Usuario");
-        getContentPane().add(fSTexFieldMD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, -1, -1));
 
-        fSPasswordFieldMD1.setForeground(new java.awt.Color(51, 102, 255));
+        fSPasswordFieldMD1.setBackground(new java.awt.Color(255, 204, 153));
+        fSPasswordFieldMD1.setForeground(new java.awt.Color(0, 0, 0));
         fSPasswordFieldMD1.setToolTipText("Ingresa tu contraseña");
         fSPasswordFieldMD1.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         fSPasswordFieldMD1.setPlaceholder("Contraseña ");
-        getContentPane().add(fSPasswordFieldMD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
 
+        jComboBox1.setBackground(new java.awt.Color(255, 204, 153));
         jComboBox1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(0, 102, 255));
+        jComboBox1.setForeground(new java.awt.Color(255, 153, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingresar Como:", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.setToolTipText("Tipo de usuario");
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 250, 39));
 
-        jLabel2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("¿Olvedaste tu contraseña?");
-        jLabel2.setToolTipText("Restablece tu contraseña");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, -1, -1));
-
-        fSButtonMD1.setBackground(new java.awt.Color(255, 255, 255));
-        fSButtonMD1.setForeground(new java.awt.Color(0, 102, 255));
         fSButtonMD1.setText("Ingresar");
         fSButtonMD1.setToolTipText("Inicia Sesión");
+        fSButtonMD1.setColorHover(new java.awt.Color(255, 102, 102));
+        fSButtonMD1.setColorNormal(new java.awt.Color(255, 102, 0));
+        fSButtonMD1.setColorPressed(new java.awt.Color(255, 102, 0));
+        fSButtonMD1.setColorTextHover(new java.awt.Color(255, 255, 255));
         fSButtonMD1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
-        getContentPane().add(fSButtonMD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 250, -1));
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("¿Olvedaste tu contraseña?");
+        jLabel2.setToolTipText("Restablece tu contraseña");
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Inicio de Sesión");
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Mete Gol Gana");
+
+        fSButtonMD2.setText("Crear Cuenta");
+        fSButtonMD2.setToolTipText("Inicia Sesión");
+        fSButtonMD2.setColorHover(new java.awt.Color(102, 102, 102));
+        fSButtonMD2.setColorNormal(new java.awt.Color(51, 204, 0));
+        fSButtonMD2.setColorPressed(new java.awt.Color(51, 204, 0));
+        fSButtonMD2.setColorTextHover(new java.awt.Color(255, 255, 255));
+        fSButtonMD2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
+
+        javax.swing.GroupLayout fSGradientPanel1Layout = new javax.swing.GroupLayout(fSGradientPanel1);
+        fSGradientPanel1.setLayout(fSGradientPanel1Layout);
+        fSGradientPanel1Layout.setHorizontalGroup(
+            fSGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(fSGradientPanel1Layout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addGroup(fSGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fSButtonMD2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fSTexFieldMD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fSPasswordFieldMD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fSButtonMD1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 106, Short.MAX_VALUE))
+        );
+        fSGradientPanel1Layout.setVerticalGroup(
+            fSGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fSGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(22, 22, 22)
+                .addComponent(fSTexFieldMD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fSPasswordFieldMD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fSButtonMD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fSButtonMD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(fSGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 460, 490));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/El-negocio-del-futbol-en-la-mira-de-los-fondos-de-inversion.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -355,12 +415,15 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JDialog dlgPersona;
     private LIB.FSButtonMD fSButtonMD1;
+    private LIB.FSButtonMD fSButtonMD2;
+    private LIB.FSGradientPanel fSGradientPanel1;
     private LIB.FSPasswordFieldMD fSPasswordFieldMD1;
     private LIB.FSTexFieldMD fSTexFieldMD1;
     public static javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     public static javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
