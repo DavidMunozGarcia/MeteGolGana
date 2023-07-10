@@ -73,7 +73,7 @@ public class LogIn extends javax.swing.JFrame {
         jPanel3.add(txtCedulaDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
         txtCorreoDlg.setForeground(new java.awt.Color(0, 0, 0));
-        txtCorreoDlg.setToolTipText("Ingresa tu cédula");
+        txtCorreoDlg.setToolTipText("Ingresa tu email");
         txtCorreoDlg.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txtCorreoDlg.setPlaceholder("Correo Electrónico");
         txtCorreoDlg.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +84,7 @@ public class LogIn extends javax.swing.JFrame {
         jPanel3.add(txtCorreoDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
 
         txtDirecDLG.setForeground(new java.awt.Color(0, 0, 0));
-        txtDirecDLG.setToolTipText("Ingresa tu cédula");
+        txtDirecDLG.setToolTipText("Ingresa tu direccion");
         txtDirecDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txtDirecDLG.setPlaceholder("Dirección");
         txtDirecDLG.addActionListener(new java.awt.event.ActionListener() {
@@ -95,19 +95,19 @@ public class LogIn extends javax.swing.JFrame {
         jPanel3.add(txtDirecDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
 
         txt1erNomDlg.setForeground(new java.awt.Color(0, 0, 0));
-        txt1erNomDlg.setToolTipText("Ingresa tu cédula");
+        txt1erNomDlg.setToolTipText("Ingresa tu primer nombre");
         txt1erNomDlg.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txt1erNomDlg.setPlaceholder("Primer Nombre");
         jPanel3.add(txt1erNomDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         txt2doNomDLG.setForeground(new java.awt.Color(0, 0, 0));
-        txt2doNomDLG.setToolTipText("Ingresa tu cédula");
+        txt2doNomDLG.setToolTipText("Ingresa tu segundo nombre");
         txt2doNomDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txt2doNomDLG.setPlaceholder("Segundo Nombre");
         jPanel3.add(txt2doNomDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         txtTelfDLG.setForeground(new java.awt.Color(0, 0, 0));
-        txtTelfDLG.setToolTipText("Ingresa tu cédula");
+        txtTelfDLG.setToolTipText("Ingresa tu telefono");
         txtTelfDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txtTelfDLG.setPlaceholder("Teléfono");
         txtTelfDLG.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +119,7 @@ public class LogIn extends javax.swing.JFrame {
         jPanel3.add(txtFechaDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 250, 42));
 
         txt1erApeDLG.setForeground(new java.awt.Color(0, 0, 0));
-        txt1erApeDLG.setToolTipText("Ingresa tu cédula");
+        txt1erApeDLG.setToolTipText("Ingresa tu primer apellido");
         txt1erApeDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txt1erApeDLG.setPlaceholder("Primer Apellido");
         txt1erApeDLG.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +130,7 @@ public class LogIn extends javax.swing.JFrame {
         jPanel3.add(txt1erApeDLG, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
         txt2doApeDLG.setForeground(new java.awt.Color(0, 0, 0));
-        txt2doApeDLG.setToolTipText("Ingresa tu cédula");
+        txt2doApeDLG.setToolTipText("Ingresa tu segundo apellido");
         txt2doApeDLG.setBordeColorFocus(new java.awt.Color(0, 102, 255));
         txt2doApeDLG.setPlaceholder("Segundo Apellido");
         txt2doApeDLG.addActionListener(new java.awt.event.ActionListener() {
