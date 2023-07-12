@@ -10,21 +10,24 @@ package Modelo;
  * @author Usuario
  */
 public class Clase_Partido {
+
     private int cod_partido;
     private int cod_equipo1;
-    private int cod_equipo3;
+    private int cod_equipo2;
     private int cod_campeonato;
     private int cod_estadio;
+    private int estado;
 
     public Clase_Partido() {
     }
 
-    public Clase_Partido(int cod_partido, int cod_equipo1, int cod_equipo3, int cod_campeonato, int cod_estadio) {
+    public Clase_Partido(int cod_partido, int cod_equipo1, int cod_equipo2, int cod_campeonato, int cod_estadio, int estado) {
         this.cod_partido = cod_partido;
         this.cod_equipo1 = cod_equipo1;
-        this.cod_equipo3 = cod_equipo3;
+        this.cod_equipo2 = cod_equipo2;
         this.cod_campeonato = cod_campeonato;
         this.cod_estadio = cod_estadio;
+        this.estado = estado;
     }
 
     public int getCod_partido() {
@@ -43,12 +46,12 @@ public class Clase_Partido {
         this.cod_equipo1 = cod_equipo1;
     }
 
-    public int getCod_equipo3() {
-        return cod_equipo3;
+    public int getCod_equipo2() {
+        return cod_equipo2;
     }
 
-    public void setCod_equipo3(int cod_equipo3) {
-        this.cod_equipo3 = cod_equipo3;
+    public void setCod_equipo2(int cod_equipo2) {
+        this.cod_equipo2 = cod_equipo2;
     }
 
     public int getCod_campeonato() {
@@ -66,6 +69,13 @@ public class Clase_Partido {
     public void setCod_estadio(int cod_estadio) {
         this.cod_estadio = cod_estadio;
     }
-    
-    
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
 }
