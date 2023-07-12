@@ -4,6 +4,17 @@
  */
 package Vista;
 
+import LIB.FSButtonMD;
+import LIB.FSTexFieldMD;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
+
 /**
  *
  * @author blink
@@ -16,6 +27,129 @@ public class VistaCampeonato extends javax.swing.JFrame {
     public VistaCampeonato() {
         initComponents();
     }
+
+    public static JButton getBtnAgregar() {
+        return btnAgregar;
+    }
+
+    public static void setBtnAgregar(JButton btnAgregar) {
+        VistaCampeonato.btnAgregar = btnAgregar;
+    }
+
+    public static FSButtonMD getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public static void setBtnCancelar(FSButtonMD btnCancelar) {
+        VistaCampeonato.btnCancelar = btnCancelar;
+    }
+
+    public static JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public static void setBtnEliminar(JButton btnEliminar) {
+        VistaCampeonato.btnEliminar = btnEliminar;
+    }
+
+    public static FSButtonMD getBtnInicio() {
+        return btnInicio;
+    }
+
+    public static void setBtnInicio(FSButtonMD btnInicio) {
+        VistaCampeonato.btnInicio = btnInicio;
+    }
+
+    public static JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public static void setBtnModificar(JButton btnModificar) {
+        VistaCampeonato.btnModificar = btnModificar;
+    }
+
+    public static FSButtonMD getBtnRegistrarModificar() {
+        return btnRegistrarModificar;
+    }
+
+    public static void setBtnRegistrarModificar(FSButtonMD btnRegistrarModificar) {
+        VistaCampeonato.btnRegistrarModificar = btnRegistrarModificar;
+    }
+
+    public JComboBox<String> getCbxTipoCampeonato() {
+        return cbxTipoCampeonato;
+    }
+
+    public void setCbxTipoCampeonato(JComboBox<String> cbxTipoCampeonato) {
+        this.cbxTipoCampeonato = cbxTipoCampeonato;
+    }
+
+    public static JDialog getDialogRegistrarModificar() {
+        return dialogRegistrarModificar;
+    }
+
+    public static void setDialogRegistrarModificar(JDialog dialogRegistrarModificar) {
+        VistaCampeonato.dialogRegistrarModificar = dialogRegistrarModificar;
+    }
+
+    public JLabel getLblBuscar() {
+        return lblBuscar;
+    }
+
+    public void setLblBuscar(JLabel lblBuscar) {
+        this.lblBuscar = lblBuscar;
+    }
+
+    public JLabel getLblReMoJugadores() {
+        return lblReMoJugadores;
+    }
+
+    public void setLblReMoJugadores(JLabel lblReMoJugadores) {
+        this.lblReMoJugadores = lblReMoJugadores;
+    }
+
+    public JSpinner getSpnMaxEqipo() {
+        return spnMaxEqipo;
+    }
+
+    public void setSpnMaxEqipo(JSpinner spnMaxEqipo) {
+        this.spnMaxEqipo = spnMaxEqipo;
+    }
+
+    public static JTable getTblCampeonato() {
+        return tblCampeonato;
+    }
+
+    public static void setTblCampeonato(JTable tblCampeonato) {
+        VistaCampeonato.tblCampeonato = tblCampeonato;
+    }
+
+    public static FSTexFieldMD getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public static void setTxtBuscar(FSTexFieldMD txtBuscar) {
+        VistaCampeonato.txtBuscar = txtBuscar;
+    }
+
+    public static FSTexFieldMD getTxtCodigo() {
+        return txtCodigo;
+    }
+
+    public static void setTxtCodigo(FSTexFieldMD txtCodigo) {
+        VistaCampeonato.txtCodigo = txtCodigo;
+    }
+
+    public static FSTexFieldMD getTxtNombre() {
+        return txtNombre;
+    }
+
+    public static void setTxtNombre(FSTexFieldMD txtNombre) {
+        VistaCampeonato.txtNombre = txtNombre;
+    }
+
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,7 +183,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
         tblCampeonato = new javax.swing.JTable();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        lvlBuscar = new javax.swing.JLabel();
+        lblBuscar = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -215,7 +349,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
         btnEliminar.setText("Eliminar");
         btnEliminar.setToolTipText("Registrar un nuevo jugador");
 
-        lvlBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/buscar40x40.png"))); // NOI18N
+        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/buscar40x40.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -228,7 +362,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(lvlBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
                         .addComponent(btnAgregar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -248,7 +382,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(lvlBuscar))
+                    .addComponent(lblBuscar))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
@@ -341,8 +475,8 @@ public class VistaCampeonato extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblReMoJugadores;
-    private javax.swing.JLabel lvlBuscar;
     private javax.swing.JSpinner spnMaxEqipo;
     public static javax.swing.JTable tblCampeonato;
     public static LIB.FSTexFieldMD txtBuscar;
