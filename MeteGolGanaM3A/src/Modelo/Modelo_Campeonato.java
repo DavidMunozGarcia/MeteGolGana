@@ -50,7 +50,7 @@ public class Modelo_Campeonato extends Clase_Campeonato {
         }
     }
 
-    public boolean ActualizarPersona() {
+    public boolean ActualizarCampeonato() {
 
         String sql = "UPDATE `campeonato` SET 'nombre`='" + getNombre()+ "',`tipo_campeonato`='" + getTipo_campeonato()+ "',`max_equipos`='" + getMax_equipos()+ "',"
                 + "`estado_elim`='" + getEstado_elim() + "';";
