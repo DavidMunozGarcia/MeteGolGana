@@ -10,10 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-/**
- *
- * @author Derek
- */
 public class VistaEquipos extends javax.swing.JFrame {
 
     /**
@@ -60,6 +56,14 @@ public class VistaEquipos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jdlgEquipos = new javax.swing.JDialog();
+        lblReMoJugadores = new javax.swing.JLabel();
+        txtCodPartido = new LIB.FSTexFieldMD();
+        txtCampeonato = new LIB.FSTexFieldMD();
+        txtEquipo2 = new LIB.FSTexFieldMD();
+        jdcaniofundacion = new com.toedter.calendar.JDateChooser();
+        jLabel2 = new javax.swing.JLabel();
+        btnEquipo = new LIB.FSButtonMD();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnInicio = new LIB.FSButtonMD();
@@ -69,6 +73,73 @@ public class VistaEquipos extends javax.swing.JFrame {
         tblEquipos = new javax.swing.JTable();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+
+        lblReMoJugadores.setFont(new java.awt.Font("STHupo", 1, 36)); // NOI18N
+        lblReMoJugadores.setForeground(new java.awt.Color(255, 255, 255));
+        lblReMoJugadores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblReMoJugadores.setText("Registrar o Modificar");
+
+        txtCodPartido.setForeground(new java.awt.Color(0, 0, 0));
+        txtCodPartido.setBordeColorFocus(new java.awt.Color(51, 51, 255));
+        txtCodPartido.setPlaceholder("Ciudad");
+
+        txtCampeonato.setForeground(new java.awt.Color(0, 0, 0));
+        txtCampeonato.setBordeColorFocus(new java.awt.Color(51, 51, 255));
+        txtCampeonato.setPlaceholder("Nombre del Equipo");
+
+        txtEquipo2.setForeground(new java.awt.Color(0, 0, 0));
+        txtEquipo2.setBordeColorFocus(new java.awt.Color(51, 51, 255));
+        txtEquipo2.setPlaceholder("Codigo del Equipo");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(140, 140, 140));
+        jLabel2.setText("Año de Fundacion");
+
+        btnEquipo.setBackground(new java.awt.Color(204, 204, 204));
+        btnEquipo.setText("Buscar Equipo");
+
+        javax.swing.GroupLayout jdlgEquiposLayout = new javax.swing.GroupLayout(jdlgEquipos.getContentPane());
+        jdlgEquipos.getContentPane().setLayout(jdlgEquiposLayout);
+        jdlgEquiposLayout.setHorizontalGroup(
+            jdlgEquiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdlgEquiposLayout.createSequentialGroup()
+                .addGroup(jdlgEquiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtCampeonato, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jdlgEquiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jdlgEquiposLayout.createSequentialGroup()
+                            .addGap(45, 45, 45)
+                            .addComponent(txtEquipo2, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jdlgEquiposLayout.createSequentialGroup()
+                            .addGap(44, 44, 44)
+                            .addGroup(jdlgEquiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtCodPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jdlgEquiposLayout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jdcaniofundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(btnEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+            .addComponent(lblReMoJugadores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jdlgEquiposLayout.setVerticalGroup(
+            jdlgEquiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdlgEquiposLayout.createSequentialGroup()
+                .addComponent(lblReMoJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtEquipo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jdlgEquiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCampeonato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(jdlgEquiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jdcaniofundacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(txtCodPartido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -250,12 +321,20 @@ public class VistaEquipos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnAgregar;
     public static javax.swing.JButton btnEliminar;
+    private LIB.FSButtonMD btnEquipo;
     public static LIB.FSButtonMD btnInicio;
     public static javax.swing.JButton btnModificar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private com.toedter.calendar.JDateChooser jdcaniofundacion;
+    private javax.swing.JDialog jdlgEquipos;
+    private javax.swing.JLabel lblReMoJugadores;
     public static javax.swing.JTable tblEquipos;
     public static LIB.FSTexFieldMD txtBuscar;
+    public static LIB.FSTexFieldMD txtCampeonato;
+    public static LIB.FSTexFieldMD txtCodPartido;
+    public static LIB.FSTexFieldMD txtEquipo2;
     // End of variables declaration//GEN-END:variables
 }
