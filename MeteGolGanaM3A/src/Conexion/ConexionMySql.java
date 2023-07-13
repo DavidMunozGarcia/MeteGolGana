@@ -18,9 +18,9 @@ import java.util.logging.Logger;
  */
 public class ConexionMySql {
 
-    private final String URL = "jdbc:mysql://localhost:3306/proyectomg";
-    private final String USER = "root";
-    private final String PASSWORD = "";
+    private final String URL = "jdbc:postgresql://localhost:5432/ProyectoMG";
+    private final String USER = "postgres";
+    private final String PASSWORD = "1234";
 
     private Connection con = null;
     private Statement st;
@@ -29,7 +29,7 @@ public class ConexionMySql {
 
         con = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConexionMySql.class.getName()).log(Level.SEVERE, null, ex);
         }
