@@ -9,16 +9,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="txtCampeonato" min="-2" pref="440" max="-2" attributes="0"/>
+                      <Component id="txtNombreequipo" min="-2" pref="440" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="txtEquipo2" min="-2" pref="440" max="-2" attributes="0"/>
+                              <Component id="txtcodequipo" min="-2" pref="440" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtCodPartido" min="-2" pref="440" max="-2" attributes="0"/>
+                                  <Component id="txtCiudadequipo" min="-2" pref="440" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -40,10 +40,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="lblReMoJugadores" min="-2" pref="66" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtEquipo2" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtcodequipo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtCampeonato" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombreequipo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnEquipo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="45" max="32767" attributes="0"/>
@@ -52,7 +52,7 @@
                       <Component id="jdcaniofundacion" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="txtCodPartido" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCiudadequipo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -71,7 +71,7 @@
             <Property name="text" type="java.lang.String" value="Registrar o Modificar"/>
           </Properties>
         </Component>
-        <Component class="LIB.FSTexFieldMD" name="txtCodPartido">
+        <Component class="LIB.FSTexFieldMD" name="txtCiudadequipo">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -85,7 +85,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
-        <Component class="LIB.FSTexFieldMD" name="txtCampeonato">
+        <Component class="LIB.FSTexFieldMD" name="txtNombreequipo">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -99,7 +99,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
-        <Component class="LIB.FSTexFieldMD" name="txtEquipo2">
+        <Component class="LIB.FSTexFieldMD" name="txtcodequipo">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
