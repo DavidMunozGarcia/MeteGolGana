@@ -16,10 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-/**
- *
- * @author Usuario
- */
 public class VistaPartido extends javax.swing.JFrame {
 
     /**
@@ -334,7 +330,7 @@ public class VistaPartido extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STHupo", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Partidos");
+        jLabel1.setText("PARTIDO");
 
         btnInicio.setBackground(new java.awt.Color(0, 102, 204));
         btnInicio.setText("Pagina Principal");

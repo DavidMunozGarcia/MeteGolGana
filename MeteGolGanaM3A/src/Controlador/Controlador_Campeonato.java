@@ -6,9 +6,9 @@
 package Controlador;
 
 import Conexion.ConexionMySql;
+import Modelo.Clase_Campeonato;
 import Modelo.Modelo_Campeonato;
 import Vista.VistaCampeonato;
-import java.awt.Image;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -30,20 +30,17 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-
 /**
  *
  * @author tatip
  */
-
 //--------------------------------------------------Controlador--------------------------------//
-
 public class Controlador_Campeonato {
 
     Modelo_Campeonato modelo;
 
     VistaCampeonato vista;
-    
+
     ConexionMySql conSql = new ConexionMySql();
 
     public Controlador_Campeonato() {
@@ -58,17 +55,26 @@ public class Controlador_Campeonato {
         vista.setVisible(true);
 
     }
-    
-    
+
 //----------------------------------------------Iniciar Control-------------------------------------------------------------------------//
     public void iniciaControl() {
         // Configuración inicial de la vista
         vista.setTitle("Campeonatos");
-       
-
+        
+        vista.getBtnAgregar().addActionListener(l -> abrirDialogo("Crear"));
+        vista.getBtnModificar().addActionListener(l -> abrirDialogo("Editar"));
+        vista.getBtnEliminar().addActionListener(l -> abrirDialogo("Eliminar"));
+        vista.getBtnCancelar().addActionListener(l -> cerrarDialogo());
+        vista.getBtnRegistrarModificar().addActionListener(l -> crearEditarEliminarCampeonato());
+        
+        mostrarDatosTabla();
+        
+        vista.getLblBuscar().addAncestorListener(listener);
+        
+        /*
         // Asociación de acciones a los botones
-        vista.getBtnImprimir().addActionListener(l -> reporteProducto());
-        vista.getBtnRemover().addActionListener(l -> Eliminar());
+        //vista.getBtnImprimir().addActionListener(l -> reporteProducto());
+        vista.getBtnEliminar().addActionListener(l -> Eliminar());
         vista.getBtnLimpiarDlg().addActionListener(l -> limpiar());
         vista.getBtnConsultar().addActionListener(l -> buscar());
         vista.getBtnExaminar().addActionListener(l -> Foto());
@@ -106,9 +112,8 @@ public class Controlador_Campeonato {
 
         // Mostrar los datos iniciales en la tabla
         mostrarDatosTabla();
-    }
-    
-    
+   */ }
+
 //-----------------------------------------------------------Dialogo------------------------------------------------------------------------//
     private void cerrarDialogo() {
 
@@ -127,33 +132,29 @@ public class Controlador_Campeonato {
         }
     }
 
-    
-
     private void abrirDialogo(String ce) {
 
-        vista.getDialogRegistrarModificar().setLocationRelativeTo(vista);
-        vista.getDialogRegistrarModificar().setSize(500, 500);
+        vista.getDialogRegistrarModificar().setLocationRelativeTo(null);
+        vista.getDialogRegistrarModificar().setSize(900, 900);
         vista.getDialogRegistrarModificar().setTitle(ce);
-
-        if (vista.getDialogRegistrarModificar().getTitle().equals("Crear")) {
-
-            vista.getBtnRegistrarModificar().setText("Registrar");
-            limpiar();
-            vista.getTxtCodigo().setEnabled(false);
-        } else {
-
-            vista.getBtnModificar().setText("Modificar");
-            llenarCamposDeTexto();
-            vista.getTxtCodigo().setEnabled(false);
-
-        }
         vista.getDialogRegistrarModificar().setVisible(true);
-    }
-    
+        
+        if (vista.getDialogRegistrarModificar().getTitle().contentEquals("Crear")) {
+            vista.getLblReMoJugadores().setText("REGISTRO DE PARTIDOS");
+        } else if (vista.getDialogRegistrarModificar().getTitle().contentEquals("Editar")) {
+            
+            vista.getLblReMoJugadores().setText("MODIFICAR PARTIDOS");
+            llenarCamposDeTexto();
 
-//-------------------------------------------------------------CREAR MODIFICAR-------------------------------------------------------//
-    
-    private void crearEditarCampeonato() {
+        } else if (vista.getDialogRegistrarModificar().getTitle().contentEquals("Eliminar")) {
+            
+            llenarCamposDeTexto();
+            
+        }
+    }
+
+//-------------------------------------------------------------CREAR MODIFICAR ELIMINAR---------------------------------------------------------------//
+    private void crearEditarEliminarCampeonato() {
         String title = vista.getDialogRegistrarModificar().getTitle();
 
         if (title.equals("Crear")) {
@@ -161,36 +162,28 @@ public class Controlador_Campeonato {
                 JOptionPane.showMessageDialog(null, "Aún existen campos vacíos",
                         "Error", JOptionPane.ERROR_MESSAGE);
             } else {
+
+                // Asignar valores al modelo
                 modelo.setCod_campeonato(Integer.valueOf(vista.getTxtCodigo().getText()));
+                modelo.setNombre(vista.getTxtNombre().getText());
+                modelo.setTipo_campeonato((String) vista.getCbxTipoCampeonato().getSelectedItem());
+                modelo.setEstado_elim(1);
 
-                if (modelo.Validar()) {
+//transformar de objeto a int
+                int stock = ((Number) vista.getSpnMaxEqipo().getValue()).intValue();
 
-                    // Asignar valores al modelo
-                    modelo.setNombreProducto(vista.getTxtNombreDlg().getText());
-                    modelo.setFotoProducto(vista.getTxtFoto().getText());
-                    modelo.setDescripcionProducto(vista.getTxtDescripcionDlg().getText());
-                    //transformar de objeto a int
-                    int stock = ((Number) vista.getSpnStockDlg().getValue()).intValue();
-                    modelo.setStock(stock);
-                    
-                    modelo.setPrecio(Double.valueOf(vista.getTxtPrecioDlg().getText()));
+                if (modelo.InsertarCampeonato()) {
+                    JOptionPane.showMessageDialog(null, "Datos guardados exitosamente",
+                            "Advertencia", JOptionPane.INFORMATION_MESSAGE);
 
-                    if (modelo.insertarProductos()) {
-                        JOptionPane.showMessageDialog(null, "Datos guardados exitosamente",
-                                "Advertencia", JOptionPane.INFORMATION_MESSAGE);
-
-                        vista.getDlgProductos().dispose();
-                        mostrarDatosTabla();
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Error al guardar la información",
-                                "Advertencia", JOptionPane.ERROR_MESSAGE);
-                    }
+                    vista.getDialogRegistrarModificar().dispose();
+                    mostrarDatosTabla();
 
                 } else {
-                    JOptionPane.showMessageDialog(vista, "El código ingresado ya existe en la base de datos",
-                            "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Error al guardar la información",
+                            "Advertencia", JOptionPane.ERROR_MESSAGE);
                 }
+
             }
 
         } else if (title.equals("Editar")) {
@@ -199,76 +192,85 @@ public class Controlador_Campeonato {
 
             if (confirmacion == JOptionPane.YES_OPTION) {
 
-                modelo.setCodigoProducto(Integer.valueOf(vista.getTxtCodigoDlg().getText()));
-                modelo.setNombreProducto(vista.getTxtNombreDlg().getText());
-                modelo.setDescripcionProducto(vista.getTxtDescripcionDlg().getText());
-                
-                int stock = ((Number) vista.getSpnStockDlg().getValue()).intValue();
-                modelo.setStock(stock);
-                
-                modelo.setPrecio(Double.parseDouble(vista.getTxtPrecioDlg().getText()));
+                vista.getTxtCodigo().setEditable(false);
 
-                modelo.setFotoProducto(vista.getTxtFoto().getText());
+                modelo.setCod_campeonato(Integer.valueOf(vista.getTxtCodigo().getText()));
+                modelo.setNombre(vista.getTxtNombre().getText());
+                modelo.setTipo_campeonato((String) vista.getCbxTipoCampeonato().getSelectedItem());
 
-                if (modelo.modificarProductos()) {
+                int stock = ((Number) vista.getSpnMaxEqipo().getValue()).intValue();
+
+                if (modelo.ActualizarCampeonato()) {
                     JOptionPane.showMessageDialog(vista, "Datos modificados ",
                             "Advertencia", JOptionPane.INFORMATION_MESSAGE);
 
                     mostrarDatosTabla();
                 }
             }
+
+        } else if (vista.getDialogRegistrarModificar().getTitle().contentEquals("Eliminar")) {
+
+            Modelo_Campeonato model = new Modelo_Campeonato();
+            model.setCod_campeonato(Integer.valueOf(vista.getTxtCodigo().getText()));
+
+            if (model.EliminarCampeonato()) {
+
+                limpiar();
+                JOptionPane.showMessageDialog(vista, "Datos eliminados");
+
+                vista.getDialogRegistrarModificar().setVisible(false);
+                mostrarDatosTabla();
+
+            } else {
+                JOptionPane.showMessageDialog(vista, "Error al eliminar los datos");
+            }
         }
     }
 
-// Verifica si hay campos vacíos en el formulario
+    
+//------------------------------------------------ Verifica si hay campos vacíos en el formulario----------------------------------------\\
     private boolean camposVacios() {
-        return vista.getTxtCodigoDlg().getText().isEmpty()
-                || vista.getTxtDescripcionDlg().getText().isEmpty()
-                || vista.getTxtFoto().getText().isEmpty()
-                || vista.getTxtDescripcionDlg().getText().isEmpty()
-                || vista.getTxtPrecioDlg().getText().isEmpty();
+        return vista.getTxtCodigo().getText().isEmpty()
+                || vista.getTxtNombre().getText().isEmpty()
+                || vista.getCbxTipoCampeonato().getSelectedItem().equals("Selecciona:")
+                || vista.getSpnMaxEqipo().getValue().equals(0);
 
     }
+//---------------------------------LLENAR CAMPOS DE TEXTO DESDE TABLA------------------------------------------------\\
 
     public void llenarCamposDeTexto() {
         // Obtener la lista de productos
-        List<Productos> listaProductos = modelo.listarProductos();
+        List<Clase_Campeonato> listCamp = modelo.ListaCampeonato();
 
         // Recorrer la lista de productos
-        listaProductos.stream().forEach(p -> {
+        listCamp.stream().forEach(p -> {
             // Verificar si el codigo del producto coincide con el codigo seleccionado en la tabla
-            if (vista.getTblProductos().getValueAt(vista.getTblProductos().getSelectedRow(), 0).equals(p.getCodigoProducto())) {
+            if (vista.getTblCampeonato().getValueAt(vista.getTblCampeonato().getSelectedRow(), 0).equals(p.getCod_campeonato())) {
 
                 // Llenar los campos de la vista con los datos de producto seleccionado
-                vista.getTxtCodigoDlg().setText(String.valueOf(p.getCodigoProducto()));
-                vista.getTxtNombreDlg().setText(p.getNombreProducto());
-                vista.getTxtDescripcionDlg().setText(p.getDescripcionProducto());
-                vista.getSpnStockDlg().setValue(p.getStock());
-                vista.getTxtFoto().setText(p.getFotoProducto());
-                vista.getTxtPrecioDlg().setText(String.valueOf(p.getPrecio()));
-                // Cargar la imagen de la foto y ajustar su tamaño
-                ImageIcon miImagen = new ImageIcon(vista.getTxtFoto().getText());
-                Image foto = miImagen.getImage();
-                foto = foto.getScaledInstance(145, 145, Image.SCALE_SMOOTH);
-                vista.getLblFoto().setIcon(new ImageIcon(foto));
+                vista.getTxtCodigo().setText(String.valueOf(p.getCod_campeonato()));
+                vista.getTxtCodigo().setText(p.getNombre());
+                vista.getCbxTipoCampeonato().setSelectedItem(p.getTipo_campeonato());
+                vista.getSpnMaxEqipo().setValue(p.getMax_equipos());
 
             }
         });
     }
 
+    //----------------------------------MOSTRAR DATOS TABLA---------------------------------------------------------\\
     public void mostrarDatosTabla() {
 
-        DefaultTableModel tabla = (DefaultTableModel) vista.getTblProductos().getModel();
+        DefaultTableModel tabla = (DefaultTableModel) vista.getTblCampeonato().getModel();
         tabla.setRowCount(0);
 
         // Obtener la lista de productos
-        List<Productos> listaProductos = modelo.listarProductos();
+        List<Clase_Campeonato> listCamp = modelo.ListaCampeonato();
 
         // Recorrer la lista de productos
-        listaProductos.forEach(p -> {
+        listCamp.forEach(p -> {
 
             // Crear un objeto datos con los valores de los campos correspondientes del producto
-            Object[] datos = {p.getCodigoProducto(), p.getNombreProducto(), p.getDescripcionProducto(), p.getStock(), p.getPrecio()};
+            Object[] datos = {p.getCod_campeonato(), p.getNombre(), p.getTipo_campeonato(), p.getMax_equipos()};
 
             // Agregar el objeto como una nueva fila a la tabla
             tabla.addRow(datos);
@@ -276,73 +278,43 @@ public class Controlador_Campeonato {
 
         // Agregar ordenamiento y filtrado a la tabla
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(tabla);
-        vista.getTblProductos().setRowSorter(sorter);
+        vista.getTblCampeonato().setRowSorter(sorter);
     }
 
-public void buscar() {
-    // Obtener el código ingresado en el campo de búsqueda
-    int codigo = Integer.parseInt(vista.getTxtBuscar().getText());
+//--------------------------------------------------------BUSCAR---------------------------------------------------\\
+    public void buscar() {
+        // Obtener el código ingresado en el campo de búsqueda
+        int codigo = Integer.parseInt(vista.getTxtBuscar().getText());
 
-    if (codigo == 0) {
-        // Mostrar mensaje de error si no se ingresa el código
-        JOptionPane.showMessageDialog(null, "Ingrese el código del producto que desea buscar",
-                "Error", JOptionPane.ERROR_MESSAGE);
-    } else {
-        // Obtener el modelo de la tabla
-        DefaultTableModel tabla = (DefaultTableModel) vista.getTblProductos().getModel();
-        // Limpiar el modelo de datos de la tabla
-        tabla.setNumRows(0);
+        if (codigo == 0) {
+            // Mostrar mensaje de error si no se ingresa el código
+            JOptionPane.showMessageDialog(null, "Ingrese el código del campeonato que desea buscar",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Obtener el modelo de la tabla
+            DefaultTableModel tabla = (DefaultTableModel) vista.getTblCampeonato().getModel();
+            // Limpiar el modelo de datos de la tabla
+            tabla.setNumRows(0);
 
-        // Obtener la lista de productos
-        List<Productos> listaProductos = modelo.listarProductos();
+            // Obtener la lista de productos
+            List<Clase_Campeonato> listaProductos = modelo.ListaCampeonato();
 
-        // Utilizar un stream para procesar la lista de productos
-        listaProductos.stream()
-                // Filtrar los productos por el código
-                .filter(p -> codigo == p.getCodigoProducto())
-                // Mapear cada producto filtrado a un objeto "datos" que contiene los valores deseados
-                .map(p -> {
-                    // Crear un objeto "datos"
-                    Object[] datos = {p.getCodigoProducto(), p.getNombreProducto(), p.getDescripcionProducto(), p.getStock()};
-                    return datos;
-                })
-                // Agregar cada objeto "datos" como una nueva fila al modelo de la tabla
-                .forEach(tabla::addRow);
-    }
-}
-
-    public void Eliminar() {
-        // Mostrar mensaje de confirmación
-        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Desea eliminar este registro?",
-                "Advertencia", JOptionPane.YES_NO_OPTION);
-
-        if (confirmacion == JOptionPane.YES_OPTION) {
-            // Obtener la fila seleccionada en la tabla
-            int selectedRow = vista.getTblProductos().getSelectedRow();
-
-            if (selectedRow != -1) {
-
-                // Obtener elcodigo del producto  de la fila seleccionada
-                int cod = (int) vista.getTblProductos().getValueAt(selectedRow, 0);
-                String codString = String.valueOf(cod);
-                modelo.setCodigoProducto(cod);
-
-                if (modelo.EliminarProductos()) {
-                    // Mostrar mensaje de eliminación exitosa
-                    JOptionPane.showMessageDialog(null, "Eliminado",
-                            "Advertencia", JOptionPane.INFORMATION_MESSAGE);
-                    mostrarDatosTabla(); // Actualizar la tabla con los datos actualizados
-                } else {
-                    // Mostrar mensaje de error en caso de fallar la eliminación
-                    JOptionPane.showMessageDialog(null, "Error al eliminar el registro",
-                            "Advertencia", JOptionPane.ERROR_MESSAGE);
-                }
-            }
+            // Utilizar un stream para procesar la lista de productos
+            listaProductos.stream()
+                    // Filtrar los productos por el código
+                    .filter(p -> codigo == p.getCod_campeonato())
+                    // Mapear cada producto filtrado a un objeto "datos" que contiene los valores deseados
+                    .map(p -> {
+                        // Crear un objeto "datos"
+                        Object[] datos = {p.getCod_campeonato(), p.getNombre(), p.getTipo_campeonato(), p.getMax_equipos()};
+                        return datos;
+                    })
+                    // Agregar cada objeto "datos" como una nueva fila al modelo de la tabla
+                    .forEach(tabla::addRow);
         }
     }
 
 //--------------------------------------------------------------LIMPIAR------------------------------------------------------------//
-
     public void limpiar() {
 
         vista.getTxtNombre().setText("");
@@ -350,16 +322,14 @@ public void buscar() {
         vista.getTxtBuscar().setText("");
         vista.getCbxTipoCampeonato().setSelectedIndex(0);
         vista.getSpnMaxEqipo().setValue(2);
-        
 
     }
-    
+
     private void limpiaBusca() {
         vista.getTxtBuscar().setText("");
         mostrarDatosTabla();
     }
-    
-    
+
     /* private void reporte(){
     try{
         
@@ -406,5 +376,4 @@ public void buscar() {
                         Logger.getLogger(ControladorPersonas.class.getName()).log(Level.SEVERE, null, ex);
  }
     }*/
-
 }
