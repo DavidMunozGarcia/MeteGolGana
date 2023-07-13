@@ -292,17 +292,17 @@ public class VistaPartido extends javax.swing.JFrame {
         tblPartidos.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
         tblPartidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Codigo del Equipo", "Nombre", "Año de Fundacion", "Ciudad"
+                "CodigoPartido", "Equipo1", "Equipo2", "Campeonato", "Estadio"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -330,7 +330,7 @@ public class VistaPartido extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STHupo", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("EQUIPOS");
+        jLabel1.setText("PARTIDO");
 
         btnInicio.setBackground(new java.awt.Color(0, 102, 204));
         btnInicio.setText("Pagina Principal");
@@ -359,7 +359,7 @@ public class VistaPartido extends javax.swing.JFrame {
         txtBuscar.setForeground(new java.awt.Color(0, 0, 0));
         txtBuscar.setToolTipText("Ingrese el Codigo del Partido");
         txtBuscar.setBordeColorFocus(new java.awt.Color(51, 51, 255));
-        txtBuscar.setPlaceholder("Buscar Equipo");
+        txtBuscar.setPlaceholder("BuscarPartido");
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarActionPerformed(evt);

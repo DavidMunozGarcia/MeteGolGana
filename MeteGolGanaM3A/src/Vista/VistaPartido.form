@@ -605,11 +605,12 @@
               <Font name="Yu Gothic Medium" size="18" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="false" title="Codigo del Equipo" type="java.lang.Object"/>
-                <Column editable="false" title="Nombre" type="java.lang.Object"/>
-                <Column editable="false" title="A&#xf1;o de Fundacion" type="java.lang.Object"/>
-                <Column editable="false" title="Ciudad" type="java.lang.Object"/>
+              <Table columnCount="5" rowCount="4">
+                <Column editable="false" title="CodigoPartido" type="java.lang.Object"/>
+                <Column editable="false" title="Equipo1" type="java.lang.Object"/>
+                <Column editable="false" title="Equipo2" type="java.lang.Object"/>
+                <Column editable="false" title="Campeonato" type="java.lang.Object"/>
+                <Column editable="false" title="Estadio" type="java.lang.Object"/>
               </Table>
             </Property>
           </Properties>
@@ -696,7 +697,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="EQUIPOS"/>
+            <Property name="text" type="java.lang.String" value="PARTIDO"/>
           </Properties>
         </Component>
         <Component class="LIB.FSButtonMD" name="btnInicio">
@@ -736,7 +737,7 @@
         <Property name="bordeColorFocus" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="33" red="33" type="rgb"/>
         </Property>
-        <Property name="placeholder" type="java.lang.String" value="Buscar Equipo"/>
+        <Property name="placeholder" type="java.lang.String" value="BuscarPartido"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBuscarActionPerformed"/>

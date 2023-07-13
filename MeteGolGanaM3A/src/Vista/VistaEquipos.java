@@ -4,6 +4,12 @@
  */
 package Vista;
 
+import LIB.FSButtonMD;
+import LIB.FSTexFieldMD;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
 /**
  *
  * @author Derek
@@ -15,6 +21,34 @@ public class VistaEquipos extends javax.swing.JFrame {
      */
     public VistaEquipos() {
         initComponents();
+    }
+
+    public static JTable getTblEquipos() {
+        return tblEquipos;
+    }
+
+    public static JButton getBtnAgregar() {
+        return btnAgregar;
+    }
+
+    public static JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public static FSButtonMD getBtnInicio() {
+        return btnInicio;
+    }
+
+    public static JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public static FSTexFieldMD getTxtBuscar() {
+        return txtBuscar;
     }
 
     /**
@@ -32,7 +66,7 @@ public class VistaEquipos extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         txtBuscar = new LIB.FSTexFieldMD();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblPartidos = new javax.swing.JTable();
+        tblEquipos = new javax.swing.JTable();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
 
@@ -43,7 +77,7 @@ public class VistaEquipos extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("STHupo", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Partidos");
+        jLabel1.setText("Equipos");
 
         btnInicio.setBackground(new java.awt.Color(0, 102, 204));
         btnInicio.setText("Pagina Principal");
@@ -84,34 +118,34 @@ public class VistaEquipos extends javax.swing.JFrame {
         txtBuscar.setForeground(new java.awt.Color(0, 0, 0));
         txtBuscar.setToolTipText("Ingrese el Codigo del Partido");
         txtBuscar.setBordeColorFocus(new java.awt.Color(51, 51, 255));
-        txtBuscar.setPlaceholder("BuscarPartido");
+        txtBuscar.setPlaceholder("Buscar Equipo");
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarActionPerformed(evt);
             }
         });
 
-        tblPartidos.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
-        tblPartidos.setModel(new javax.swing.table.DefaultTableModel(
+        tblEquipos.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
+        tblEquipos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "CodigoPartido", "Equipo1", "Equipo2", "Campeonato", "Estadio"
+                "Codigo Del Equipo", "Nombre", "Año de Fundación", "Ciudad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblPartidos);
+        jScrollPane1.setViewportView(tblEquipos);
 
         btnModificar.setBackground(new java.awt.Color(0, 102, 204));
         btnModificar.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
@@ -221,7 +255,7 @@ public class VistaEquipos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTable tblPartidos;
+    public static javax.swing.JTable tblEquipos;
     public static LIB.FSTexFieldMD txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
