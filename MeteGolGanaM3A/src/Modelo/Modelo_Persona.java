@@ -33,8 +33,9 @@ public class Modelo_Persona extends Clase_Persona {
 
     public boolean InsertarPersona() throws SQLException {
 
-        String sql = "INSERT INTO `persona`(`cedula`, `nombre1`, `nombre2`, `apellido1`, `apellido2`, `fecha_nac`, `telefono`, `email`, `sexo`, `direccion`, `foto`) "
-                + "VALUES (?,?,?,?,?,?,?,?,?,?,?);";
+        String sql = "INSERT INTO public.persona( "
+                + "cedula, nombre1, nombre2, apellido1, apellido2, fecha_nac, telefono, email, sexo, direccion, foto, estado_elim) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         PreparedStatement ps = con.getCon().prepareStatement(sql);
         ps.setString(1, getCedula());
@@ -55,9 +56,9 @@ public class Modelo_Persona extends Clase_Persona {
 
     public boolean ActualizarPersona() {
 
-        String sql = "UPDATE `persona` SET `nombre1`='" + getNombnre1() + "',`nombre2`='" + getNombnre2() + "',`apellido1`='" + getApellido1() + "',"
-                + "`apellido2`='" + getApellido2() + "',`fecha_nac`='" + getFecha_nac() + "',`telefono`='" + getTelefono() + "',"
-                + "`email`='" + getEmail() + "',`sexo`='" + getSexo() + "',`direccion`='" + getDireccion() + "' WHERE `cedula`='" + getCedula() + "';";
+        String sql = "UPDATE persona SET nombre1='" + getNombnre1() + "',nombre2='" + getNombnre2() + "',apellido1='" + getApellido1() + "',"
+                + "apellido2='" + getApellido2() + "',fecha_nac='" + getFecha_nac() + "',telefono='" + getTelefono() + "',"
+                + "email='" + getEmail() + "',sexo='" + getSexo() + "',direccion='" + getDireccion() + "' WHERE cedula='" + getCedula() + "';";
 
         return con.CRUD(sql);
     }
