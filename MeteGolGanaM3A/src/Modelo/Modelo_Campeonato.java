@@ -96,4 +96,12 @@ public class Modelo_Campeonato extends Clase_Campeonato {
             return null;
         }
     }
+    
+    public boolean EliminarCampeonato() {
+        String sql;
+        sql = "delete from campeonato where cod_campeonato='" + getCod_campeonato()+ "';";
+        return con.CRUD(sql);
+
+    }
+    
 }
