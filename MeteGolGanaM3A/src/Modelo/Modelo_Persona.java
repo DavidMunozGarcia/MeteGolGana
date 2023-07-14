@@ -34,8 +34,8 @@ public class Modelo_Persona extends Clase_Persona {
     public boolean InsertarPersona() throws SQLException {
 
         String sql = "INSERT INTO public.persona( "
-                + "cedula, nombre1, nombre2, apellido1, apellido2, fecha_nac, telefono, email, sexo, direccion, foto, estado_elim) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                + "cedula, nombre1, nombre2, apellido1, apellido2, fecha_nac, telefono, email, sexo, direccion, foto) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         PreparedStatement ps = con.getCon().prepareStatement(sql);
         ps.setString(1, getCedula());
@@ -54,13 +54,25 @@ public class Modelo_Persona extends Clase_Persona {
 
     }
 
-    public boolean ActualizarPersona() {
+    public boolean ActualizarPersona() throws SQLException {
 
-        String sql = "UPDATE persona SET nombre1='" + getNombnre1() + "',nombre2='" + getNombnre2() + "',apellido1='" + getApellido1() + "',"
-                + "apellido2='" + getApellido2() + "',fecha_nac='" + getFecha_nac() + "',telefono='" + getTelefono() + "',"
-                + "email='" + getEmail() + "',sexo='" + getSexo() + "',direccion='" + getDireccion() + "' WHERE cedula='" + getCedula() + "';";
+        String sql = "UPDATE public.persona "
+                + "SET nombre1=?, nombre2=?, apellido1=?, apellido2=?, fecha_nac=?, telefono=?, email=?, sexo=?, direccion=?, foto=? "
+                + "WHERE cedula='" + getCedula() + "';";
 
-        return con.CRUD(sql);
+        PreparedStatement ps = con.getCon().prepareStatement(sql);
+        ps.setString(1, getNombnre1());
+        ps.setString(2, getNombnre2());
+        ps.setString(3, getApellido1());
+        ps.setString(4, getApellido2());
+        ps.setDate(5, getFecha_nac());
+        ps.setString(6, getTelefono());
+        ps.setString(7, getEmail());
+        ps.setString(8, getSexo());
+        ps.setString(9, getDireccion());
+        ps.setBinaryStream(10, getImageFile(), getLength());
+        ps.executeUpdate();
+        return true;
     }
 
     public boolean OcultarPersona() {
@@ -74,7 +86,7 @@ public class Modelo_Persona extends Clase_Persona {
 
         try {
 
-            String sql = "SELECT * FROM `persona` ORDER BY 'cedula'";
+            String sql = "SELECT * FROM persona ORDER BY cedula";
             ResultSet res = con.Consultas(sql);
             List<Clase_Persona> per = new ArrayList<>();
             byte[] bytea;
