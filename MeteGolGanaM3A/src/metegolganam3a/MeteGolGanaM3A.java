@@ -5,6 +5,10 @@
 package metegolganam3a;
 
 import Conexion.ConexionMySql;
+import Controlador.Controlador_Jugador;
+import Modelo.Modelo_Jugador;
+import Modelo.Modelo_Persona;
+import Vista.LogIn;
 import Vista.VistaJugadores;
 
 /**
@@ -18,7 +22,13 @@ public class MeteGolGanaM3A {
      */
     public static void main(String[] args) {
         
-        Conexion.ConexionMySql m = new ConexionMySql();
+        Modelo_Jugador modju = new Modelo_Jugador();
+        Modelo.Modelo_Persona modper = new Modelo_Persona();
+        Vista.VistaJugadores visju = new VistaJugadores();
+        Vista.LogIn lo = new LogIn();
+        
+        Controlador.Controlador_Jugador con = new Controlador_Jugador(modju, visju, modper, lo);
+        con.InicarControlador();
         
     }
     
