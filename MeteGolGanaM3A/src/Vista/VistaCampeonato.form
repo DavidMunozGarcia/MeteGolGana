@@ -118,7 +118,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="LIB.FSButtonMD" name="btnCancelar">
+            <Component class="LIB.FSButtonMD" name="btnCancelarDlg">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -140,7 +140,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="LIB.FSButtonMD" name="btnRegistrarModificar">
+            <Component class="LIB.FSButtonMD" name="btnRegistrarModificarDlg">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Registrar"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

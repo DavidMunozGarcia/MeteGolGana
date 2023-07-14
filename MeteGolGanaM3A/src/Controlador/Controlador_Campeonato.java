@@ -64,12 +64,12 @@ public class Controlador_Campeonato {
         vista.getBtnAgregar().addActionListener(l -> abrirDialogo("Crear"));
         vista.getBtnModificar().addActionListener(l -> abrirDialogo("Editar"));
         vista.getBtnEliminar().addActionListener(l -> abrirDialogo("Eliminar"));
-        vista.getBtnCancelar().addActionListener(l -> cerrarDialogo());
-        vista.getBtnRegistrarModificar().addActionListener(l -> crearEditarEliminarCampeonato());
+        vista.getBtnCancelarDlg().addActionListener(l -> cerrarDialogo());
+        vista.getBtnRegistrarModificarDlg().addActionListener(l -> crearEditarEliminarCampeonato());
         
         mostrarDatosTabla();
         
-        vista.getLblBuscar().addAncestorListener(listener);
+        //vista.getLblBuscar().addAncestorListener(listener);
         
         /*
         // Asociación de acciones a los botones
@@ -132,12 +132,33 @@ public class Controlador_Campeonato {
         }
     }
 
-    private void abrirDialogo(String ce) {
+        private void abrirDialogo(String ce) {
+
+        vista.getDialogRegistrarModificar().setLocationRelativeTo(vista);
+        vista.getDialogRegistrarModificar().setSize(500, 500);
+        vista.getDialogRegistrarModificar().setTitle(ce);
+
+        if (vista.getDialogRegistrarModificar().getTitle().equals("Crear")) {
+
+            vista.getBtnRegistrarModificarDlg().setText("Registrar");
+            limpiar();
+            vista.getTxtCodigo().setEnabled(false);
+        } else {
+
+            vista.getBtnRegistrarModificarDlg().setText("Modificar");
+            llenarCamposDeTexto();
+            vista.getTxtCodigo().setEnabled(false);
+
+        }
+        vista.getDialogRegistrarModificar().setVisible(true);
+    }
+    
+   /* private void abrirDialogo(String ce) {
 
         vista.getDialogRegistrarModificar().setLocationRelativeTo(null);
         vista.getDialogRegistrarModificar().setSize(900, 900);
         vista.getDialogRegistrarModificar().setTitle(ce);
-        vista.getDialogRegistrarModificar().setVisible(true);
+        
         
         if (vista.getDialogRegistrarModificar().getTitle().contentEquals("Crear")) {
             vista.getLblReMoJugadores().setText("REGISTRO DE PARTIDOS");
@@ -151,7 +172,10 @@ public class Controlador_Campeonato {
             llenarCamposDeTexto();
             
         }
-    }
+        
+        vista.getDialogRegistrarModificar().setVisible(true);
+        
+    }*/
 
 //-------------------------------------------------------------CREAR MODIFICAR ELIMINAR---------------------------------------------------------------//
     private void crearEditarEliminarCampeonato() {

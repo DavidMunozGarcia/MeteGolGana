@@ -55,13 +55,19 @@ public class Controlador_Partido {
         vistapar.getDialogRegistrarModificar().setSize(900, 900);
         vistapar.getDialogRegistrarModificar().setTitle(ce);
         vistapar.getDialogRegistrarModificar().setVisible(true);
+        
         if (vistapar.getDialogRegistrarModificar().getTitle().contentEquals("Crear")) {
             vistapar.getLblReMoJugadores().setText("REGISTRO DE PARTIDOS");
-        } else if (vistapar.getDialogRegistrarModificar().getTitle().contentEquals("Editar")) {
+            
+        } else 
+            
+            if (vistapar.getDialogRegistrarModificar().getTitle().contentEquals("Editar")) {
             vistapar.getLblReMoJugadores().setText("MODIFICAR PARTIDOS");
             LlenarDatos();
 
-        } else if (vistapar.getDialogRegistrarModificar().getTitle().contentEquals("Eliminar")) {
+        } else
+                
+                if (vistapar.getDialogRegistrarModificar().getTitle().contentEquals("Eliminar")) {
             LlenarDatos();
         }
     }

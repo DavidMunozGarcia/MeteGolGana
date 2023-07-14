@@ -36,12 +36,12 @@ public class VistaCampeonato extends javax.swing.JFrame {
         VistaCampeonato.btnAgregar = btnAgregar;
     }
 
-    public static FSButtonMD getBtnCancelar() {
-        return btnCancelar;
+    public static FSButtonMD getBtnCancelarDlg() {
+        return btnCancelarDlg;
     }
 
-    public static void setBtnCancelar(FSButtonMD btnCancelar) {
-        VistaCampeonato.btnCancelar = btnCancelar;
+    public static void setBtnCancelarDlg(FSButtonMD btnCancelarDlg) {
+        VistaCampeonato.btnCancelarDlg = btnCancelarDlg;
     }
 
     public static JButton getBtnEliminar() {
@@ -68,12 +68,12 @@ public class VistaCampeonato extends javax.swing.JFrame {
         VistaCampeonato.btnModificar = btnModificar;
     }
 
-    public static FSButtonMD getBtnRegistrarModificar() {
-        return btnRegistrarModificar;
+    public static FSButtonMD getBtnRegistrarModificarDlg() {
+        return btnRegistrarModificarDlg;
     }
 
-    public static void setBtnRegistrarModificar(FSButtonMD btnRegistrarModificar) {
-        VistaCampeonato.btnRegistrarModificar = btnRegistrarModificar;
+    public static void setBtnRegistrarModificarDlg(FSButtonMD btnRegistrarModificarDlg) {
+        VistaCampeonato.btnRegistrarModificarDlg = btnRegistrarModificarDlg;
     }
 
     public JComboBox<String> getCbxTipoCampeonato() {
@@ -90,6 +90,22 @@ public class VistaCampeonato extends javax.swing.JFrame {
 
     public static void setDialogRegistrarModificar(JDialog dialogRegistrarModificar) {
         VistaCampeonato.dialogRegistrarModificar = dialogRegistrarModificar;
+    }
+
+    public JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public void setjMenu1(JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public JMenu getjMenu2() {
+        return jMenu2;
+    }
+
+    public void setjMenu2(JMenu jMenu2) {
+        this.jMenu2 = jMenu2;
     }
 
     public JLabel getLblBuscar() {
@@ -149,6 +165,8 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     
+
+    
     
 
     /**
@@ -166,8 +184,8 @@ public class VistaCampeonato extends javax.swing.JFrame {
         lblReMoJugadores = new javax.swing.JLabel();
         txtCodigo = new LIB.FSTexFieldMD();
         txtNombre = new LIB.FSTexFieldMD();
-        btnCancelar = new LIB.FSButtonMD();
-        btnRegistrarModificar = new LIB.FSButtonMD();
+        btnCancelarDlg = new LIB.FSButtonMD();
+        btnRegistrarModificarDlg = new LIB.FSButtonMD();
         jLabel2 = new javax.swing.JLabel();
         cbxTipoCampeonato = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
@@ -228,17 +246,17 @@ public class VistaCampeonato extends javax.swing.JFrame {
         txtNombre.setPlaceholder("Nombre del campeonato");
         jPanel3.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 200, -1));
 
-        btnCancelar.setText("Cancelar");
-        btnCancelar.setColorHover(new java.awt.Color(0, 0, 0));
-        btnCancelar.setColorNormal(new java.awt.Color(255, 0, 0));
-        btnCancelar.setColorTextHover(new java.awt.Color(255, 255, 255));
-        jPanel3.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, -1, -1));
+        btnCancelarDlg.setText("Cancelar");
+        btnCancelarDlg.setColorHover(new java.awt.Color(0, 0, 0));
+        btnCancelarDlg.setColorNormal(new java.awt.Color(255, 0, 0));
+        btnCancelarDlg.setColorTextHover(new java.awt.Color(255, 255, 255));
+        jPanel3.add(btnCancelarDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, -1, -1));
 
-        btnRegistrarModificar.setText("Registrar");
-        btnRegistrarModificar.setColorHover(new java.awt.Color(0, 102, 204));
-        btnRegistrarModificar.setColorPressed(new java.awt.Color(0, 204, 51));
-        btnRegistrarModificar.setColorTextHover(new java.awt.Color(255, 255, 255));
-        jPanel3.add(btnRegistrarModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, -1, -1));
+        btnRegistrarModificarDlg.setText("Registrar");
+        btnRegistrarModificarDlg.setColorHover(new java.awt.Color(0, 102, 204));
+        btnRegistrarModificarDlg.setColorPressed(new java.awt.Color(0, 204, 51));
+        btnRegistrarModificarDlg.setColorTextHover(new java.awt.Color(255, 255, 255));
+        jPanel3.add(btnRegistrarModificarDlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         jLabel2.setText("Número Máximo de Equipos");
@@ -457,11 +475,11 @@ public class VistaCampeonato extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnAgregar;
-    public static LIB.FSButtonMD btnCancelar;
+    public static LIB.FSButtonMD btnCancelarDlg;
     public static javax.swing.JButton btnEliminar;
     public static LIB.FSButtonMD btnInicio;
     public static javax.swing.JButton btnModificar;
-    public static LIB.FSButtonMD btnRegistrarModificar;
+    public static LIB.FSButtonMD btnRegistrarModificarDlg;
     private javax.swing.JComboBox<String> cbxTipoCampeonato;
     public static javax.swing.JDialog dialogRegistrarModificar;
     private javax.swing.JLabel jLabel1;
