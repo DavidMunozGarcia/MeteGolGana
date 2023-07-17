@@ -117,7 +117,7 @@ public class Controlador_Campeonato {
 //-----------------------------------------------------------Dialogo------------------------------------------------------------------------//
     private void cerrarDialogo() {
 
-        vista.getDialogRegistrarModificar().dispose();
+        vista.getDlgCampeonatos().dispose();
 
     }
 
@@ -134,11 +134,11 @@ public class Controlador_Campeonato {
 
         private void abrirDialogo(String ce) {
 
-        vista.getDialogRegistrarModificar().setLocationRelativeTo(vista);
-        vista.getDialogRegistrarModificar().setSize(500, 500);
-        vista.getDialogRegistrarModificar().setTitle(ce);
+        vista.getDlgCampeonatos().setLocationRelativeTo(vista);
+        vista.getDlgCampeonatos().setSize(500, 500);
+        vista.getDlgCampeonatos().setTitle(ce);
 
-        if (vista.getDialogRegistrarModificar().getTitle().equals("Crear")) {
+        if (vista.getDlgCampeonatos().getTitle().equals("Crear")) {
 
             vista.getBtnRegistrarModificarDlg().setText("Registrar");
             limpiar();
@@ -150,7 +150,7 @@ public class Controlador_Campeonato {
             vista.getTxtCodigo().setEnabled(false);
 
         }
-        vista.getDialogRegistrarModificar().setVisible(true);
+        vista.getDlgCampeonatos().setVisible(true);
     }
     
    /* private void abrirDialogo(String ce) {
@@ -179,7 +179,7 @@ public class Controlador_Campeonato {
 
 //-------------------------------------------------------------CREAR MODIFICAR ELIMINAR---------------------------------------------------------------//
     private void crearEditarEliminarCampeonato() {
-        String title = vista.getDialogRegistrarModificar().getTitle();
+        String title = vista.getDlgCampeonatos().getTitle();
 
         if (title.equals("Crear")) {
             if (camposVacios()) {
@@ -200,7 +200,7 @@ public class Controlador_Campeonato {
                     JOptionPane.showMessageDialog(null, "Datos guardados exitosamente",
                             "Advertencia", JOptionPane.INFORMATION_MESSAGE);
 
-                    vista.getDialogRegistrarModificar().dispose();
+                    vista.getDlgCampeonatos().dispose();
                     mostrarDatosTabla();
 
                 } else {
@@ -232,7 +232,7 @@ public class Controlador_Campeonato {
                 }
             }
 
-        } else if (vista.getDialogRegistrarModificar().getTitle().contentEquals("Eliminar")) {
+        } else if (vista.getDlgCampeonatos().getTitle().contentEquals("Eliminar")) {
 
             Modelo_Campeonato model = new Modelo_Campeonato();
             model.setCod_campeonato(Integer.valueOf(vista.getTxtCodigo().getText()));
@@ -242,7 +242,7 @@ public class Controlador_Campeonato {
                 limpiar();
                 JOptionPane.showMessageDialog(vista, "Datos eliminados");
 
-                vista.getDialogRegistrarModificar().setVisible(false);
+                vista.getDlgCampeonatos().setVisible(false);
                 mostrarDatosTabla();
 
             } else {

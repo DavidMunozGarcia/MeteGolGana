@@ -19,12 +19,12 @@ import javax.swing.JTable;
  *
  * @author blink
  */
-public class VistaCampeonato extends javax.swing.JFrame {
+public class VistaTemporada extends javax.swing.JFrame {
 
     /**
      * Creates new form VistaJugadores
      */
-    public VistaCampeonato() {
+    public VistaTemporada() {
         initComponents();
     }
 
@@ -33,7 +33,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setBtnAgregar(JButton btnAgregar) {
-        VistaCampeonato.btnAgregar = btnAgregar;
+        VistaTemporada.btnAgregar = btnAgregar;
     }
 
     public static FSButtonMD getBtnCancelarDlg() {
@@ -41,7 +41,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setBtnCancelarDlg(FSButtonMD btnCancelarDlg) {
-        VistaCampeonato.btnCancelarDlg = btnCancelarDlg;
+        VistaTemporada.btnCancelarDlg = btnCancelarDlg;
     }
 
     public static JButton getBtnEliminar() {
@@ -49,7 +49,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setBtnEliminar(JButton btnEliminar) {
-        VistaCampeonato.btnEliminar = btnEliminar;
+        VistaTemporada.btnEliminar = btnEliminar;
     }
 
     public static FSButtonMD getBtnInicio() {
@@ -57,7 +57,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setBtnInicio(FSButtonMD btnInicio) {
-        VistaCampeonato.btnInicio = btnInicio;
+        VistaTemporada.btnInicio = btnInicio;
     }
 
     public static JButton getBtnModificar() {
@@ -65,7 +65,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setBtnModificar(JButton btnModificar) {
-        VistaCampeonato.btnModificar = btnModificar;
+        VistaTemporada.btnModificar = btnModificar;
     }
 
     public static FSButtonMD getBtnRegistrarModificarDlg() {
@@ -73,7 +73,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setBtnRegistrarModificarDlg(FSButtonMD btnRegistrarModificarDlg) {
-        VistaCampeonato.btnRegistrarModificarDlg = btnRegistrarModificarDlg;
+        VistaTemporada.btnRegistrarModificarDlg = btnRegistrarModificarDlg;
     }
 
     public JComboBox<String> getCbxTipoCampeonato() {
@@ -89,7 +89,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setDlgCampeonatos(JDialog dlgCampeonatos) {
-        VistaCampeonato.dlgCampeonatos = dlgCampeonatos;
+        VistaTemporada.dlgCampeonatos = dlgCampeonatos;
     }
 
    
@@ -139,7 +139,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setTblCampeonato(JTable tblCampeonato) {
-        VistaCampeonato.tblCampeonato = tblCampeonato;
+        VistaTemporada.tblCampeonato = tblCampeonato;
     }
 
     public static FSTexFieldMD getTxtBuscar() {
@@ -147,7 +147,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setTxtBuscar(FSTexFieldMD txtBuscar) {
-        VistaCampeonato.txtBuscar = txtBuscar;
+        VistaTemporada.txtBuscar = txtBuscar;
     }
 
     public static FSTexFieldMD getTxtCodigo() {
@@ -155,7 +155,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setTxtCodigo(FSTexFieldMD txtCodigo) {
-        VistaCampeonato.txtCodigo = txtCodigo;
+        VistaTemporada.txtCodigo = txtCodigo;
     }
 
     public static FSTexFieldMD getTxtNombre() {
@@ -163,7 +163,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
     }
 
     public static void setTxtNombre(FSTexFieldMD txtNombre) {
-        VistaCampeonato.txtNombre = txtNombre;
+        VistaTemporada.txtNombre = txtNombre;
     }
 
     
@@ -454,14 +454,18 @@ public class VistaCampeonato extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaCampeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTemporada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaCampeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTemporada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaCampeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTemporada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaCampeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTemporada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -470,7 +474,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaCampeonato().setVisible(true);
+                new VistaTemporada().setVisible(true);
             }
         });
     }
