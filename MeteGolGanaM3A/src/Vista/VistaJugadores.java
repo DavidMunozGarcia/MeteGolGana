@@ -246,7 +246,7 @@ public class VistaJugadores extends javax.swing.JFrame {
         btnAgregar.setText("Crear nuevo");
         btnAgregar.setToolTipText("Registrar un nuevo jugador");
 
-        tblJugadores.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
+        tblJugadores.setFont(new java.awt.Font("Yu Gothic Medium", 0, 12)); // NOI18N
         tblJugadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
