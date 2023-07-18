@@ -50,37 +50,34 @@ public class Modelo_Temporada extends Clase_Temporada {
         return con.CRUD(sql);
     }
 
-    public List<Clase_Jugador> ListaTemporada() {
+    public List<Clase_Temporada> ListaTemporada() {
 
         try {
 
             String sql = "SELECT * "
-                    + "FROM jugador j, persona p "
-                    + "WHERE p.cedula = j.cedula_personafk "
+                    + "FROM temporada "
+                    
                     + "ORDER BY j.codigo";
             ResultSet res = con.Consultas(sql);
-            List<Clase_Jugador> jug = new ArrayList<>();
+            List<Clase_Temporada> listTemporada = new ArrayList<>();
             byte[] bytea;
 
             while (res.next()) {
 
-                Clase_Jugador mijugador = new Clase_Jugador();
+                Clase_Temporada mitemp = new Clase_Temporada();
 
-                //jugador
-                mijugador.setCod_equipo(res.getInt("cod_equipofk"));
-                mijugador.setCod_jugador(res.getInt("codigo"));
-                mijugador.setCedula_persona(res.getString("cedula_personafk"));
-                mijugador.setSueldo(res.getDouble("sueldo"));
-                mijugador.setPosicion(res.getString("posicion"));
-                mijugador.setFecha_finContrato(res.getDate("fecha_fin_contrato"));
-                mijugador.setFecha_inicioContrato(res.getDate("fecha_inicio_contrato"));
-                mijugador.setAnios_exp(res.getInt("anios_exp"));
+                //temporada
+                mitemp.setCodigoPk(res.getInt("codigo"));
+                mitemp.setFechaIni(res.getDate("fecha_inicio"));
+                mitemp.setFechaFin(res.getDate("fecha_fin"));
+                mitemp.setCodCampeonatoFk(res.getInt("codigo_campeonato"));
+               
 
-                jug.add(mijugador);
+                listTemporada.add(mitemp);
             }
 
             res.close();
-            return jug;
+            return listTemporada;
 
         } catch (SQLException ex) {
 
@@ -90,67 +87,37 @@ public class Modelo_Temporada extends Clase_Temporada {
         }
     }
 
-    public List<Clase_Jugador> BuscarJugador(String aux) {
+    public List<Clase_Temporada> buscarTemporada(String aux) {
+    try {
+        String sql = "SELECT * FROM temporada "
+                + "WHERE codigo LIKE '%" + aux + "%' "
+                + "OR fecha_inicio LIKE '%" + aux + "%' "
+                + "OR fecha_fin LIKE '%" + aux + "%' "
+                + "OR codigo_campeonato LIKE '%" + aux + "%' "
+                + "ORDER BY codigo";
 
-        try {
+        ResultSet res = con.Consultas(sql);
+        List<Clase_Temporada> temporadas = new ArrayList<>();
 
-            String sql = "SELECT * "
-                    + "FROM jugador j, persona p "
-                    + "WHERE p.cedula = j.cedula_personafk "
-                    + "AND (j.cedula_personafk LIKE '%" + aux + "%' OR CONCAT(p.nombre1, ' ', p.apellido1) LIKE '%" + aux + "%') "
-                    + "ORDER BY j.codigo";
-            ResultSet res = con.Consultas(sql);
-            List<Clase_Jugador> jug = new ArrayList<>();
-            byte[] bytea;
+        while (res.next()) {
+            Clase_Temporada temporada = new Clase_Temporada();
+            temporada.setCodigoPk(res.getInt("codigo"));
+            temporada.setFechaIni(res.getDate("fecha_inicio"));
+            temporada.setFechaFin(res.getDate("fecha_fin"));
+            temporada.setCodCampeonatoFk(res.getInt("codigo_campeonato"));
+            temporada.setEstadoEli(res.getBoolean("estado_elim"));
 
-            while (res.next()) {
-
-                Clase_Jugador mijugador = new Clase_Jugador();
-
-                //jugador
-                mijugador.setCod_equipo(res.getInt("cod_equipofk"));
-                mijugador.setCod_jugador(res.getInt("codigo"));
-                mijugador.setCedula_persona(res.getString("cedula_personafk"));
-                mijugador.setSueldo(res.getDouble("sueldo"));
-                mijugador.setPosicion(res.getString("posicion"));
-
-                //persona
-                mijugador.setApellido1(res.getString("apellido1"));
-                mijugador.setApellido2(res.getString("apellido2"));
-                mijugador.setCedula(res.getString("cedula"));
-                mijugador.setDireccion(res.getString("direccion"));
-                mijugador.setEmail(res.getString("email"));
-                mijugador.setFecha_nac(res.getDate("fecha_nac"));
-                mijugador.setNombnre1(res.getString("nombre1"));
-                mijugador.setNombnre2(res.getString("nombre2"));
-                mijugador.setSexo(res.getString("sexo"));
-                mijugador.setTelefono(res.getString("telefono"));
-                mijugador.setEstado_elim(res.getBoolean("estado_elim"));
-
-                bytea = res.getBytes("foto");
-
-                if (bytea != null) try {
-
-                    mijugador.setFoto(getImage(bytea));
-
-                } catch (IOException ex) {
-                    Logger.getLogger(Modelo_Jugador.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-                jug.add(mijugador);
-            }
-
-            res.close();
-            return jug;
-
-        } catch (SQLException ex) {
-
-            Logger.getLogger(Modelo_Jugador.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-            return null;
+            temporadas.add(temporada);
         }
-    }
 
-  
+        res.close();
+        return temporadas;
+
+    } catch (SQLException ex) {
+        Logger.getLogger(Modelo_Temporada.class.getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null, ex.getMessage());
+        return null;
+    }
+}
     
 }

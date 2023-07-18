@@ -69,50 +69,8 @@ public class Controlador_Campeonato {
         
         mostrarDatosTabla();
         
-        //vista.getLblBuscar().addAncestorListener(listener);
-        
-        /*
-        // Asociación de acciones a los botones
-        //vista.getBtnImprimir().addActionListener(l -> reporteProducto());
-        vista.getBtnEliminar().addActionListener(l -> Eliminar());
-        vista.getBtnLimpiarDlg().addActionListener(l -> limpiar());
-        vista.getBtnConsultar().addActionListener(l -> buscar());
-        vista.getBtnExaminar().addActionListener(l -> Foto());
-        vista.getBtnSalir().addActionListener(l -> vista.dispose());
-        vista.getBtnCrear().addActionListener(l -> abrirDialogo("Crear"));
-        vista.getBtnEditar().addActionListener(l -> abrirEditarDialogo());
-        vista.getBtnCerrarDlg().addActionListener(l -> cerrarDialogo());
-        vista.getBtnLimpiaBusca().addActionListener(l -> limpiaBusca());
 
-        // Validaciones de entrada para los campos de texto
-        vista.getTxtCodigoDlg().addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent evt) {
-                Validaciones.Enteros(evt, vista.getTxtCodigoDlg().getText());
-            }
-        });
-
-        vista.getTxtNombreDlg().addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent evt) {
-                Validaciones.validaNomNum(evt, vista.getTxtNombreDlg().getText());
-            }
-        });
-
-        vista.getTxtPrecioDlg().addKeyListener(new KeyAdapter() {
-            @Override
-
-            public void keyTyped(KeyEvent evt) {
-                Validaciones.Decimales(evt, vista.getTxtPrecioDlg().getText());
-            }
-        });
-
-        // Asociación de acción al botón de edición en el diálogo
-        vista.getBtnEditarDLG().addActionListener(l -> crearEditarProductos());
-
-        // Mostrar los datos iniciales en la tabla
-        mostrarDatosTabla();
-   */ }
+   }
 
 //-----------------------------------------------------------Dialogo------------------------------------------------------------------------//
     private void cerrarDialogo() {
@@ -153,29 +111,6 @@ public class Controlador_Campeonato {
         vista.getDlgCampeonatos().setVisible(true);
     }
     
-   /* private void abrirDialogo(String ce) {
-
-        vista.getDialogRegistrarModificar().setLocationRelativeTo(null);
-        vista.getDialogRegistrarModificar().setSize(900, 900);
-        vista.getDialogRegistrarModificar().setTitle(ce);
-        
-        
-        if (vista.getDialogRegistrarModificar().getTitle().contentEquals("Crear")) {
-            vista.getLblReMoJugadores().setText("REGISTRO DE PARTIDOS");
-        } else if (vista.getDialogRegistrarModificar().getTitle().contentEquals("Editar")) {
-            
-            vista.getLblReMoJugadores().setText("MODIFICAR PARTIDOS");
-            llenarCamposDeTexto();
-
-        } else if (vista.getDialogRegistrarModificar().getTitle().contentEquals("Eliminar")) {
-            
-            llenarCamposDeTexto();
-            
-        }
-        
-        vista.getDialogRegistrarModificar().setVisible(true);
-        
-    }*/
 
 //-------------------------------------------------------------CREAR MODIFICAR ELIMINAR---------------------------------------------------------------//
     private void crearEditarEliminarCampeonato() {
