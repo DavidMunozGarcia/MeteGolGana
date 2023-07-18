@@ -60,7 +60,7 @@ public class Controlador_temporada {
     }
 
     private void abrirEditarDialogo() {
-        int selectedRow = vista.getTblCampeonato().getSelectedRow();
+        int selectedRow = vista.getTblTemporada().getSelectedRow();
 
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(vista, "Debe seleccionar un registro de la tabla",
