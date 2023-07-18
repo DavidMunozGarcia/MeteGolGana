@@ -6,47 +6,27 @@
 package Controlador;
 
 import Conexion.ConexionMySql;
-import Modelo.Clase_Campeonato;
-import Modelo.Modelo_Campeonato;
-import Vista.VistaCampeonato;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.io.File;
-import java.sql.Connection;
-import java.sql.Date;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
+import Modelo.Modelo_Temporada;
+import Vista.VistaTemporada;
 import javax.swing.JOptionPane;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 
 /**
  *
  * @author tatip
  */
-//--------------------------------------------------Controlador--------------------------------//
-public class Controlador_Campeonato {
+public class Controlador_temporada {
+    
+    
+    Modelo_Temporada  modelo;
 
-    Modelo_Campeonato modelo;
-
-    VistaCampeonato vista;
+    VistaTemporada vista;
 
     ConexionMySql conSql = new ConexionMySql();
 
-    public Controlador_Campeonato() {
+    public Controlador_temporada() {
     }
 
-    public Controlador_Campeonato(Modelo_Campeonato modelo, VistaCampeonato vista) {
+    public Controlador_temporada(Modelo_Temporada modelo, VistaTemporada vista) {
 
         this.modelo = modelo;
 
@@ -75,12 +55,12 @@ public class Controlador_Campeonato {
 //-----------------------------------------------------------Dialogo------------------------------------------------------------------------//
     private void cerrarDialogo() {
 
-        vista.getDlgCampeonatos().dispose();
+        vista.getDlgaTemporada().dispose();
 
     }
 
     private void abrirEditarDialogo() {
-        int selectedRow = vista.getTblCampeonato().getSelectedRow();
+        int selectedRow = vista.getTblTemporada().getSelectedRow();
 
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(vista, "Debe seleccionar un registro de la tabla",
@@ -92,15 +72,15 @@ public class Controlador_Campeonato {
 
         private void abrirDialogo(String ce) {
 
-        vista.getDlgCampeonatos().setLocationRelativeTo(vista);
-        vista.getDlgCampeonatos().setSize(500, 500);
-        vista.getDlgCampeonatos().setTitle(ce);
+        vista.getDlgaTemporada().setLocationRelativeTo(vista);
+        vista.getDlgaTemporada().setSize(600, 500);
+        vista.getDlgaTemporada().setTitle(ce);
 
-        if (vista.getDlgCampeonatos().getTitle().equals("Crear")) {
+        if (vista.getDlgaTemporada().getTitle().equals("Crear")) {
 
             vista.getBtnRegistrarModificarDlg().setText("Registrar");
             limpiar();
-            vista.getTxtCodigo().setEnabled(false);
+            vista.getTxtCodigo().setEnabled(true);
         } else {
 
             vista.getBtnRegistrarModificarDlg().setText("Modificar");
@@ -108,13 +88,13 @@ public class Controlador_Campeonato {
             vista.getTxtCodigo().setEnabled(false);
 
         }
-        vista.getDlgCampeonatos().setVisible(true);
+        vista.getDlgaTemporada().setVisible(true);
     }
     
 
 //-------------------------------------------------------------CREAR MODIFICAR ELIMINAR---------------------------------------------------------------//
     private void crearEditarEliminarCampeonato() {
-        String title = vista.getDlgCampeonatos().getTitle();
+        String title = vista.getDlgaTemporada().getTitle();
 
         if (title.equals("Crear")) {
             if (camposVacios()) {
@@ -123,7 +103,7 @@ public class Controlador_Campeonato {
             } else {
 
                 // Asignar valores al modelo
-                modelo.setCod_campeonato(Integer.valueOf(vista.getTxtCodigo().getText()));
+                modelo.setCodigoPk(Integer.valueOf(vista.getTxtCodigo().getText()));
                 modelo.setNombre(vista.getTxtNombre().getText());
                 modelo.setTipo_campeonato((String) vista.getCbxTipoCampeonato().getSelectedItem());
                 modelo.setEstado_elim(1);
@@ -335,4 +315,5 @@ public class Controlador_Campeonato {
                         Logger.getLogger(ControladorPersonas.class.getName()).log(Level.SEVERE, null, ex);
  }
     }*/
+    
 }
