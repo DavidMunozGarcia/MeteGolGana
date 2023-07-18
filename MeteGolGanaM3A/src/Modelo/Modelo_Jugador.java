@@ -52,7 +52,7 @@ public class Modelo_Jugador extends Clase_Jugador {
     public boolean OcultarJugador() {
 
         String sql = "UPDATE jugador SET estado_elim=true "
-                + "WHERE `codigo`=" + getCod_jugador() + ";";
+                + "WHERE codigo=" + getCod_jugador() + ";";
 
         return con.CRUD(sql);
     }
@@ -61,9 +61,8 @@ public class Modelo_Jugador extends Clase_Jugador {
 
         try {
 
-            String sql = "SELECT * "
-                    + "FROM jugador j, persona p "
-                    + "WHERE p.cedula = j.cedula_personafk "
+            String sql = "SELECT * FROM jugador j, persona p "
+                    + "WHERE p.cedula = j.cedula_personafk and j.estado_elim = false "
                     + "ORDER BY j.codigo";
             ResultSet res = con.Consultas(sql);
             List<Clase_Jugador> jug = new ArrayList<>();

@@ -57,7 +57,7 @@ public class Modelo_Persona extends Clase_Persona {
     public boolean ActualizarPersona() throws SQLException {
 
         String sql = "UPDATE public.persona "
-                + "SET nombre1=?, nombre2=?, apellido1=?, apellido2=?, fecha_nac=?, telefono=?, email=?, sexo=?, direccion=?, foto=? "
+                + "SET nombre1=?, nombre2=?, apellido1=?, apellido2=?, fecha_nac=?, telefono=?, email=?, sexo=?, direccion=? "
                 + "WHERE cedula='" + getCedula() + "';";
 
         PreparedStatement ps = con.getCon().prepareStatement(sql);
@@ -70,9 +70,19 @@ public class Modelo_Persona extends Clase_Persona {
         ps.setString(7, getEmail());
         ps.setString(8, getSexo());
         ps.setString(9, getDireccion());
-        ps.setBinaryStream(10, getImageFile(), getLength());
         ps.executeUpdate();
         return true;
+    }
+    
+    public void ModificarImagen() throws SQLException{
+        
+        String sql = "UPDATE public.persona "
+                + "SET foto=? "
+                + "WHERE cedula='" + getCedula() + "';";
+        
+        PreparedStatement ps = con.getCon().prepareStatement(sql);
+        ps.setBinaryStream(1, getImageFile(), getLength());
+        ps.executeUpdate();
     }
 
     public boolean OcultarPersona() {
