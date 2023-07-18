@@ -105,7 +105,7 @@ public class Modelo_Temporada extends Clase_Temporada {
             temporada.setFechaIni(res.getDate("fecha_inicio"));
             temporada.setFechaFin(res.getDate("fecha_fin"));
             temporada.setCodCampeonatoFk(res.getInt("codigo_campeonato"));
-            temporada.setEstadoEli(res.getBoolean("estado_elim"));
+            temporada.setEstadoEli(res.getInt("estado_elim"));
 
             temporadas.add(temporada);
         }

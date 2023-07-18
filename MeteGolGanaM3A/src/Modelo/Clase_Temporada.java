@@ -17,18 +17,12 @@ public class Clase_Temporada {
     private Date fechaIni;
     private Date fechaFin;
     private int codCampeonatoFk;
-    private boolean estadoEli;
+    private int estadoEli;
 
     public Clase_Temporada() {
     }
 
-    public Clase_Temporada(int codigoPk, Date fechaIni, Date fechaFin, int codCampeonatoFk, boolean estadoEli) {
-        this.codigoPk = codigoPk;
-        this.fechaIni = fechaIni;
-        this.fechaFin = fechaFin;
-        this.codCampeonatoFk = codCampeonatoFk;
-        this.estadoEli = estadoEli;
-    }
+    
 
     public Clase_Temporada(int codigoPk, Date fechaIni, Date fechaFin, int codCampeonatoFk) {
         this.codigoPk = codigoPk;
@@ -36,6 +30,16 @@ public class Clase_Temporada {
         this.fechaFin = fechaFin;
         this.codCampeonatoFk = codCampeonatoFk;
     }
+
+    public Clase_Temporada(int codigoPk, Date fechaIni, Date fechaFin, int codCampeonatoFk, int estadoEli) {
+        this.codigoPk = codigoPk;
+        this.fechaIni = fechaIni;
+        this.fechaFin = fechaFin;
+        this.codCampeonatoFk = codCampeonatoFk;
+        this.estadoEli = estadoEli;
+    }
+    
+    
 
     public int getCodigoPk() {
         return codigoPk;
@@ -69,13 +73,15 @@ public class Clase_Temporada {
         this.codCampeonatoFk = codCampeonatoFk;
     }
 
-    public boolean isEstadoEli() {
+    public int getEstadoEli() {
         return estadoEli;
     }
 
-    public void setEstadoEli(boolean estadoEli) {
+    public void setEstadoEli(int estadoEli) {
         this.estadoEli = estadoEli;
     }
+
+
     
     
 }

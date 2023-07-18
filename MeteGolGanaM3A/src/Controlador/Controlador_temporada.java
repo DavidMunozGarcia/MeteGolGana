@@ -6,9 +6,14 @@
 package Controlador;
 
 import Conexion.ConexionMySql;
+import Modelo.Clase_Temporada;
 import Modelo.Modelo_Temporada;
 import Vista.VistaTemporada;
+import java.sql.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -45,7 +50,7 @@ public class Controlador_temporada {
         vista.getBtnModificar().addActionListener(l -> abrirDialogo("Editar"));
         vista.getBtnEliminar().addActionListener(l -> abrirDialogo("Eliminar"));
         vista.getBtnCancelarDlg().addActionListener(l -> cerrarDialogo());
-        vista.getBtnRegistrarModificarDlg().addActionListener(l -> crearEditarEliminarCampeonato());
+        vista.getBtnRegistrarModificarDlg().addActionListener(l -> crearEditarEliminarTemporada());
         
         mostrarDatosTabla();
         
@@ -93,7 +98,7 @@ public class Controlador_temporada {
     
 
 //-------------------------------------------------------------CREAR MODIFICAR ELIMINAR---------------------------------------------------------------//
-    private void crearEditarEliminarCampeonato() {
+    private void crearEditarEliminarTemporada() {
         String title = vista.getDlgaTemporada().getTitle();
 
         if (title.equals("Crear")) {
@@ -104,18 +109,16 @@ public class Controlador_temporada {
 
                 // Asignar valores al modelo
                 modelo.setCodigoPk(Integer.valueOf(vista.getTxtCodigo().getText()));
-                modelo.setNombre(vista.getTxtNombre().getText());
-                modelo.setTipo_campeonato((String) vista.getCbxTipoCampeonato().getSelectedItem());
-                modelo.setEstado_elim(1);
+                modelo.setFechaIni((Date) vista.getTxtFechaIni().getDate());
+                modelo.setFechaFin((Date) vista.getTxtFechaFin().getDate());
+                modelo.setCodCampeonatoFk(Integer.valueOf(vista.getTxtCodigoCampeonatoFK().getText()));
+                modelo.setEstadoEli(1);
 
-//transformar de objeto a int
-                int stock = ((Number) vista.getSpnMaxEqipo().getValue()).intValue();
-
-                if (modelo.InsertarCampeonato()) {
+                if (modelo.InsertarTemporada()) {
                     JOptionPane.showMessageDialog(null, "Datos guardados exitosamente",
                             "Advertencia", JOptionPane.INFORMATION_MESSAGE);
 
-                    vista.getDlgCampeonatos().dispose();
+                    vista.getDlgaTemporada().dispose();
                     mostrarDatosTabla();
 
                 } else {
@@ -133,13 +136,12 @@ public class Controlador_temporada {
 
                 vista.getTxtCodigo().setEditable(false);
 
-                modelo.setCod_campeonato(Integer.valueOf(vista.getTxtCodigo().getText()));
-                modelo.setNombre(vista.getTxtNombre().getText());
-                modelo.setTipo_campeonato((String) vista.getCbxTipoCampeonato().getSelectedItem());
+                modelo.setCodigoPk(Integer.valueOf(vista.getTxtCodigo().getText()));
+                modelo.setCodCampeonatoFk(Integer.valueOf(vista.getTxtCodigoCampeonatoFK().getText()));
+                modelo.setFechaIni((Date) vista.getTxtFechaIni().getDate());
+                modelo.setFechaFin((Date)vista.getTxtFechaFin().getDate());
 
-                int stock = ((Number) vista.getSpnMaxEqipo().getValue()).intValue();
-
-                if (modelo.ActualizarCampeonato()) {
+                if (modelo.ModificarTemporada()) {
                     JOptionPane.showMessageDialog(vista, "Datos modificados ",
                             "Advertencia", JOptionPane.INFORMATION_MESSAGE);
 
@@ -147,10 +149,10 @@ public class Controlador_temporada {
                 }
             }
 
-        } else if (vista.getDlgCampeonatos().getTitle().contentEquals("Eliminar")) {
+        } /*else if (vista.getDlgaTemporada().getTitle().contentEquals("Eliminar")) {
 
-            Modelo_Campeonato model = new Modelo_Campeonato();
-            model.setCod_campeonato(Integer.valueOf(vista.getTxtCodigo().getText()));
+            Modelo_Temporada model = new Modelo_Temporada();
+            model.setCodigoPk(Integer.valueOf(vista.getTxtCodigo().getText()));
 
             if (model.EliminarCampeonato()) {
 
@@ -163,34 +165,34 @@ public class Controlador_temporada {
             } else {
                 JOptionPane.showMessageDialog(vista, "Error al eliminar los datos");
             }
-        }
+        }*/
     }
 
     
 //------------------------------------------------ Verifica si hay campos vacíos en el formulario----------------------------------------\\
     private boolean camposVacios() {
         return vista.getTxtCodigo().getText().isEmpty()
-                || vista.getTxtNombre().getText().isEmpty()
-                || vista.getCbxTipoCampeonato().getSelectedItem().equals("Selecciona:")
-                || vista.getSpnMaxEqipo().getValue().equals(0);
+                || vista.getTxtFechaFin().getDate()== null
+                || vista.getTxtFechaIni().getDate().equals(null)
+                || vista.getTxtCodigoCampeonatoFK().getText().equals(null);
 
     }
 //---------------------------------LLENAR CAMPOS DE TEXTO DESDE TABLA------------------------------------------------\\
 
     public void llenarCamposDeTexto() {
         // Obtener la lista de productos
-        List<Clase_Campeonato> listCamp = modelo.ListaCampeonato();
+        List <Clase_Temporada> listTempo = modelo.ListaTemporada();
 
         // Recorrer la lista de productos
-        listCamp.stream().forEach(p -> {
+        listTempo.stream().forEach(p -> {
             // Verificar si el codigo del producto coincide con el codigo seleccionado en la tabla
-            if (vista.getTblCampeonato().getValueAt(vista.getTblCampeonato().getSelectedRow(), 0).equals(p.getCod_campeonato())) {
+            if (vista.getTblTemporada().getValueAt(vista.getTblTemporada().getSelectedRow(), 0).equals(p.getCodigoPk())) {
 
                 // Llenar los campos de la vista con los datos de producto seleccionado
-                vista.getTxtCodigo().setText(String.valueOf(p.getCod_campeonato()));
-                vista.getTxtCodigo().setText(p.getNombre());
-                vista.getCbxTipoCampeonato().setSelectedItem(p.getTipo_campeonato());
-                vista.getSpnMaxEqipo().setValue(p.getMax_equipos());
+                vista.getTxtCodigo().setText(String.valueOf(p.getCodigoPk()));
+                vista.getTxtFechaFin().setDate(p.getFechaFin());
+                vista.getTxtFechaIni().setDate(p.getFechaIni());
+                vista.getTxtCodigoCampeonatoFK().setText(String.valueOf(p.getCodCampeonatoFk()));
 
             }
         });
@@ -199,17 +201,17 @@ public class Controlador_temporada {
     //----------------------------------MOSTRAR DATOS TABLA---------------------------------------------------------\\
     public void mostrarDatosTabla() {
 
-        DefaultTableModel tabla = (DefaultTableModel) vista.getTblCampeonato().getModel();
+        DefaultTableModel tabla = (DefaultTableModel) vista.getTblTemporada().getModel();
         tabla.setRowCount(0);
 
         // Obtener la lista de productos
-        List<Clase_Campeonato> listCamp = modelo.ListaCampeonato();
+        List<Clase_Temporada> listCamp = modelo.ListaTemporada();
 
         // Recorrer la lista de productos
         listCamp.forEach(p -> {
 
             // Crear un objeto datos con los valores de los campos correspondientes del producto
-            Object[] datos = {p.getCod_campeonato(), p.getNombre(), p.getTipo_campeonato(), p.getMax_equipos()};
+            Object[] datos = {p.getCodigoPk(), p.getFechaIni(), p.getFechaFin(), p.getCodCampeonatoFk()};
 
             // Agregar el objeto como una nueva fila a la tabla
             tabla.addRow(datos);
@@ -217,7 +219,7 @@ public class Controlador_temporada {
 
         // Agregar ordenamiento y filtrado a la tabla
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(tabla);
-        vista.getTblCampeonato().setRowSorter(sorter);
+        vista.getTblTemporada().setRowSorter(sorter);
     }
 
 //--------------------------------------------------------BUSCAR---------------------------------------------------\\
@@ -227,25 +229,25 @@ public class Controlador_temporada {
 
         if (codigo == 0) {
             // Mostrar mensaje de error si no se ingresa el código
-            JOptionPane.showMessageDialog(null, "Ingrese el código del campeonato que desea buscar",
+            JOptionPane.showMessageDialog(null, "Ingrese el código de la temporada que desea buscar",
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             // Obtener el modelo de la tabla
-            DefaultTableModel tabla = (DefaultTableModel) vista.getTblCampeonato().getModel();
+            DefaultTableModel tabla = (DefaultTableModel) vista.getTblTemporada().getModel();
             // Limpiar el modelo de datos de la tabla
             tabla.setNumRows(0);
 
             // Obtener la lista de productos
-            List<Clase_Campeonato> listaProductos = modelo.ListaCampeonato();
+            List<Clase_Temporada> listTemp = modelo.ListaTemporada();
 
             // Utilizar un stream para procesar la lista de productos
-            listaProductos.stream()
+            listTemp.stream()
                     // Filtrar los productos por el código
-                    .filter(p -> codigo == p.getCod_campeonato())
+                    .filter(p -> codigo == p.getCodigoPk())
                     // Mapear cada producto filtrado a un objeto "datos" que contiene los valores deseados
                     .map(p -> {
                         // Crear un objeto "datos"
-                        Object[] datos = {p.getCod_campeonato(), p.getNombre(), p.getTipo_campeonato(), p.getMax_equipos()};
+                        Object[] datos = {p.getCodigoPk(), p.getFechaIni(), p.getFechaFin(), p.getCodCampeonatoFk()};
                         return datos;
                     })
                     // Agregar cada objeto "datos" como una nueva fila al modelo de la tabla
@@ -256,11 +258,11 @@ public class Controlador_temporada {
 //--------------------------------------------------------------LIMPIAR------------------------------------------------------------//
     public void limpiar() {
 
-        vista.getTxtNombre().setText("");
         vista.getTxtCodigo().setText("");
+        vista.getTxtFechaIni().setDateFormatString("");
+        vista.getTxtFechaFin().setDateFormatString("");
+        vista.getTxtCodigoCampeonatoFK().setText("");
         vista.getTxtBuscar().setText("");
-        vista.getCbxTipoCampeonato().setSelectedIndex(0);
-        vista.getSpnMaxEqipo().setValue(2);
 
     }
 

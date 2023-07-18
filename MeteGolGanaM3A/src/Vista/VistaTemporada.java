@@ -349,11 +349,11 @@ public class VistaTemporada extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código Campeonato", "Nombre Campeonato", "Tipo de Campeonato", "Número de Equipos"
+                "Código temporada", "Fecha de inicio", "Fecha de finalización", "Código del campeonato"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

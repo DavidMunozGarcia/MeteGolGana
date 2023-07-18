@@ -505,10 +505,10 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="0">
-                    <Column editable="false" title="C&#xf3;digo Campeonato" type="java.lang.Object"/>
-                    <Column editable="false" title="Nombre Campeonato" type="java.lang.Object"/>
-                    <Column editable="true" title="Tipo de Campeonato" type="java.lang.Object"/>
-                    <Column editable="false" title="N&#xfa;mero de Equipos" type="java.lang.Object"/>
+                    <Column editable="false" title="C&#xf3;digo temporada" type="java.lang.Object"/>
+                    <Column editable="false" title="Fecha de inicio" type="java.lang.Object"/>
+                    <Column editable="false" title="Fecha de finalizaci&#xf3;n" type="java.lang.Object"/>
+                    <Column editable="false" title="C&#xf3;digo del campeonato" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
