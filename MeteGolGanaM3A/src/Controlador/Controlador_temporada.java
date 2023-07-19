@@ -78,7 +78,69 @@ public class Controlador_temporada {
         private void abrirDialogo(String ce) {
 
         vista.getDlgaTemporada().setLocationRelativeTo(vista);
-        vista.getDlgaTemporada().setSize(600, 500);
+        vista.getDlgaTemporada().setSize(900, 900
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        );
         vista.getDlgaTemporada().setTitle(ce);
 
         if (vista.getDlgaTemporada().getTitle().equals("Crear")) {
