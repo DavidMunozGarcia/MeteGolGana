@@ -8,8 +8,10 @@ package Controlador;
 import Modelo.Clase_Campeonato;
 import Modelo.Clase_Temporada;
 import Modelo.Modelo_Campeonato;
+import Modelo.Modelo_Temporada;
 import Vista.MenuPrincipal;
 import Vista.VistaCampeonato;
+import Vista.VistaTemporada;
 
 /**
  *
@@ -27,9 +29,8 @@ public class Controlador_MP {
     
     public void iniciaControl (){
         vistaPrincipal.getBtnCampeonato().addActionListener(l ->menuCampeonato());
-        vistaPrincipal.getBtnPersonaMn().addActionListener(l -> menuPersonas() );
-        vistaPrincipal.getBtnProductosMN().addActionListener(l -> menuProductos());
-        vistaPrincipal.getBtnFactura().addActionListener(l -> menuFactura());
+        vistaPrincipal.getBtnTemporada().addActionListener(l -> menuTemporada());
+
     }
     
     private void menuCampeonato () { 
@@ -47,17 +48,17 @@ public class Controlador_MP {
     
      private void menuTemporada () { 
         
-        Modelo.ModeloProductos mod = new ModeloProductos();
-        Vista.VistaProductos vis = new VistaProductos();
-        Clase_Temporada miproducto = new Clase_Temporada();
+        Modelo.Modelo_Temporada mod = new Modelo_Temporada();
+        Vista.VistaTemporada vis = new VistaTemporada();
+        Clase_Temporada miTempo = new Clase_Temporada();
         vistaPrincipal.getDesctopPrincipal().add(vis);
-        controlador.ControladorProductos controlPro = new ControladorProductos(mod, vis);
+        Controlador_temporada controlPro = new Controlador_temporada (mod, vis);
         controlPro.iniciaControl();
         
 
 }
     
-     private void menuFactura () { 
+    /* private void menuFactura () { 
         
         modelo.ModeloDetalleFactura mod = new ModeloDetalleFactura();
         modelo.ModeloFactura mf = new ModeloFactura();
@@ -74,6 +75,6 @@ public class Controlador_MP {
         controlfac.iniciaControl();
         
 
-}
+}*/
     
 }
