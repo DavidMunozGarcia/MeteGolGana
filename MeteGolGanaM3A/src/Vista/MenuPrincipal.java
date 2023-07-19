@@ -64,12 +64,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         toolBar = new javax.swing.JToolBar();
         btnTemporada = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
-        btnPersonaMn = new javax.swing.JButton();
         btnCampeonato = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
-        btnProductosMN = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
-        btnFactura = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         desctopPrincipal = new javax.swing.JDesktopPane();
         jPanel3 = new javax.swing.JPanel();
@@ -101,13 +98,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         toolBar.add(btnTemporada);
         toolBar.add(jSeparator2);
 
-        btnPersonaMn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/identification32bn.png"))); // NOI18N
-        btnPersonaMn.setToolTipText("Boton para registrar personas");
-        btnPersonaMn.setFocusable(false);
-        btnPersonaMn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnPersonaMn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        toolBar.add(btnPersonaMn);
-
         btnCampeonato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/campeonato64x64.png"))); // NOI18N
         btnCampeonato.setToolTipText("Ver Campeonatos");
         btnCampeonato.setFocusable(false);
@@ -115,21 +105,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnCampeonato.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         toolBar.add(btnCampeonato);
         toolBar.add(jSeparator1);
-
-        btnProductosMN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/producto32.png"))); // NOI18N
-        btnProductosMN.setToolTipText("Boton para registrar productos\n");
-        btnProductosMN.setFocusable(false);
-        btnProductosMN.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnProductosMN.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        toolBar.add(btnProductosMN);
         toolBar.add(jSeparator3);
-
-        btnFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/factura32.png"))); // NOI18N
-        btnFactura.setToolTipText("Boton para crear facturas, de las ventas de los productos");
-        btnFactura.setFocusable(false);
-        btnFactura.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnFactura.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        toolBar.add(btnFactura);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -258,9 +234,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCampeonato;
-    private javax.swing.JToggleButton btnFactura;
-    private javax.swing.JButton btnPersonaMn;
-    private javax.swing.JButton btnProductosMN;
     private javax.swing.JMenu btnReporteFac;
     private javax.swing.JButton btnTemporada;
     private javax.swing.JDesktopPane desctopPrincipal;
