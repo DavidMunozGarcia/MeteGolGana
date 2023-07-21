@@ -56,7 +56,6 @@ public class Controlador_Jugador {
 
     public void InicarControlador() {
 
-        visJugador.setLocationRelativeTo(null);
         visJugador.setTitle("Jugadores");
         MostrarDatos();
         visJugador.btnAgregar.addActionListener(l -> IniciarDialogPersona("Registrar"));
